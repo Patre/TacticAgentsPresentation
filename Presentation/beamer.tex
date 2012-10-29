@@ -7,27 +7,9 @@
 \usepackage{listings}
 \usepackage{multicol}
 \usepackage{rotating}
-% \usepackage{beamerthemesplit} // Activate for custom appearance
 
 \setbeamertemplate{navigation symbols}{}
 \usetheme{Amsterdam}
-\defbeamertemplate*{headline}{}
-{
-  \begin{beamercolorbox}[ht=1.875ex,dp=0.75ex]{section in head/foot}%
-    \insertsectionnavigationhorizontal{\paperwidth}{}{}%
-  \end{beamercolorbox}%
-
-  \begin{beamercolorbox}[ht=1.875ex,dp=0.75ex]{subsection in head/foot}
-    \usebeamerfont{subsection in head/foot}
-    \insertsubsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll%
-    }%
-  \end{beamercolorbox}%
-}
-%\setbeamertemplate{frametitle}[default][center]
-%\usefonttheme{default}
-%\usecolortheme{seahorse}
-%\useinnertheme{circles}
-%\useoutertheme{default}
 
 \definecolor{keywords}{RGB}{255,0,0}
 \lstset{language=[LaTeX]TeX,
