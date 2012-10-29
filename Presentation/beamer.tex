@@ -6,7 +6,7 @@
 \usepackage[french]{babel}
 \usepackage{listings}
 \usepackage{multicol}
-\usepackage{rotating}
+\usepackage{tikz}
 
 \setbeamertemplate{navigation symbols}{}
 \usetheme{Amsterdam}
@@ -44,19 +44,25 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \section{Organisations militaires}
 \frame{\sectionpage}
 
-\subsection{Hiérarchiques}
 \begin{frame}
 \frametitle{test}
 \end{frame}
 
-\subsection{Anarchiques}
-\begin{frame}
-\frametitle{test}
-\end{frame}
 
 
 \section{Stratégies et tactiques}
 \frame{\sectionpage}
+
+\begin{frame}
+\frametitle{test}
+\begin{center}
+\begin{tikzpicture}
+\node[draw,rectangle,rounded corners=3pt] (P)at(0,2){Politique};
+\node[draw,rectangle,rounded corners=3pt] (S)at(0,1){Stratégie};
+\node[draw,rectangle,rounded corners=3pt] (T)at(0,0){Tactique};
+\end{tikzpicture}
+\end{center}
+\end{frame}
 
 
 \section{Applications aux systèmes multi-agents}
