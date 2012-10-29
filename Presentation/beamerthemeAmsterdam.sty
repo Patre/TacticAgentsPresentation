@@ -1,0 +1,44 @@
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\useoutertheme[footline=authortitle]{miniframes}
+\useinnertheme{circles}
+\usecolortheme{whale}
+\usecolortheme{orchid}
+
+\definecolor{beamer@blendedred}{rgb}{0.443,0.050,0.0}
+
+\setbeamercolor{structure}{fg=beamer@blendedred}
+\setbeamercolor{titlelike}{parent=structure}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{item}{fg=black}
+
+\setbeamertemplate{footline}
+{
+	\leavevmode
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+		\usebeamerfont{title in head/foot}\inserttitle
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{page number in head/foot}\insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{headline}{}
+{
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex]{section in head/foot}%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{}%
+  \end{beamercolorbox}%
+
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex]{subsection in head/foot}
+    \usebeamerfont{subsection in head/foot}
+    \insertsubsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll%
+    }%
+  \end{beamercolorbox}%
+}
+
+\mode
+<all>
