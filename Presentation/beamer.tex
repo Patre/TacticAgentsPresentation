@@ -1,0 +1,581 @@
+
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[utf8]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{rotating}
+% \usepackage{beamerthemesplit} // Activate for custom appearance
+
+\usetheme{Amsterdam}
+%\setbeamertemplate{frametitle}[default][center]
+%\usefonttheme{default}
+%\usecolortheme{seahorse}
+%\useinnertheme{circles}
+%\useoutertheme{default}
+
+\definecolor{keywords}{RGB}{255,0,0}
+\lstset{language=[LaTeX]TeX,
+texcsstyle=*\color{keywords},
+breaklines=true,
+keywordstyle=\color{keywords},
+commentstyle=\color{darkgreen},
+tabsize=2,
+backgroundcolor=\color{lightgrey},
+escapeinside=||,
+morekeywords={*,subsection,make title,tableofcontents,include graphics}
+}
+
+\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{darkgreen}{rgb}{0,0.6,0} 
+\rowcolors{1}{gray!25}{white}
+
+\title{Debriefing des partiels d’expert document}
+\author{Chloé Desdouits}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Premier partiel}
+\frame{\sectionpage}
+
+\begin{frame}[fragile]
+	\frametitle{Squelette du document}
+	Vous allez transformer ce document au format texte en un document LaTeX de classe article, en corps 12pt, et en français.
+	
+	\pause
+	
+	\begin{lstlisting}
+	\documentclass[12pt]{article}
+
+	\usepackage[utf8]{inputenc}
+	\usepackage[francais]{babel} 
+
+	\begin{document}
+
+	\end{document}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Saut de première page}
+	Vous n'aurez pratiquement pas besoin d'ajouter de contenu au texte, mais seulement les commandes utiles. 
+	
+	Ce paragraphe devra figurer tout en bas de la première page, qui se termine ici. 
+	
+	Celui-ci doit se trouver tout en haut de la seconde page.
+
+	\pause
+	
+	\begin{lstlisting}
+	Vous n'aurez pratiquement pas besoin d'ajouter de contenu au texte, mais seulement les commandes utiles. 
+	\vfill
+	Ce paragraphe devra figurer tout en bas de la premiere page, qui se termine ici. 
+	\newpage
+	Celui-ci doit se trouver tout en haut de la seconde page.
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item 
+				\begin{lstlisting}
+				\footnote 
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item 
+				\begin{lstlisting}
+				\begin{figure}[b] 
+				Ce paragraphe devra figurer tout en bas de la premiere page, qui se termine ici. 
+				\end{figure}
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Liste numérotée}
+	Chaque paragraphe ci-dessous est une instruction pour vous. Transformez ces 5 paragraphes en une liste numérotée de 5 instructions. 
+	
+	\pause
+	
+	\begin{lstlisting}
+		Chaque paragraphe ci-dessous est une instruction pour vous. Transformez ces 5 paragraphes en une liste numerotee de 5 instructions. 
+	\begin{enumerate}
+	\item Ce document ...
+	\item Le paragraphe ...
+	\item Dans cette ligne...
+	\item Recherchez les paragraphes ...
+	\item Inserez l'image carte.jpg...
+	\end{enumerate}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\begin{itemize}
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Page de titre}
+	Ce document devra avoir Petit test comme titre et vous-même comme auteur (date facultative). 
+	Remplacez donc le mot Vous par votre nom en première page. 
+	
+	\pause
+	
+	\begin{lstlisting}
+	...
+	\title{Petit test}
+	\author{Prenom Nom}
+	
+	\begin{document}
+	\maketitle
+	...
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\LaTeX Error: No \title given.
+				\end{lstlisting}
+				
+			\item \begin{lstlisting}
+				Pas de \maketitle.
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Résumé}
+	Le paragraphe de la première page qui commence par "Vous allez..." et finit par "utiles." devra apparaitre en tant que résumé de ce document.
+
+	\pause
+	
+	\begin{lstlisting}
+	...
+	\begin{document}
+	\maketitle
+	\begin{abstract}
+	Vous allez transformer ce document au format texte en un document LaTeX de classe article, en corps 12pt, et en francais. Vous n'aurez pratiquement pas besoin d'ajouter de contenu au texte, mais seulement les commandes utiles.
+	\end{abstract}
+	...
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\begin{resume}
+				\end{lstlisting}
+				
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Formatage du texte}
+	Dans cette ligne, arrangez-vous pour que le mot bonjour soit en gras et le mot bonsoir en italiques.
+	
+	\pause
+	
+	\begin{lstlisting}
+	Dans cette ligne, arrangez-vous pour que le mot \textbf{bonjour} soit en gras et le mot \textit{bonsoir} en italiques.
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Hiérarchie  du document}
+	Recherchez les paragraphes qui commencent par ***, ce devront être des titres de sections. Les sous-titres commencent par **, mettez-les aussi. Enlevez toutes les * et ...
+	
+	\pause
+	
+	\begin{lstlisting}
+	\section{Quelques trucs a faire}
+	...
+	\section{Quelques complements}
+	...
+	\subsection{Un petit tableau}
+	...
+	\subsection{Une petite citation}
+	...
+	\subsection{Un petit retour en arriere}
+		\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\section Quelques trucs a faire
+				\end{lstlisting}
+				
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Table des matières}
+	... faites une table des matières tout à la fin du document.
+	
+	\pause
+	
+	\begin{lstlisting}
+	...
+\tableofcontents
+\end{document}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Image}
+	Insérez l'image carte.jpg juste en-dessous de cette liste, en vous arrangeant pour qu'elle ne déborde pas en largeur. Encadrez-la.
+	
+	\pause
+	
+	\begin{lstlisting}
+	\usepackage{graphicx}
+...
+\end{enumerate}
+\framebox {
+	\includegraphics[width=\linewidth]{carte}
+}
+...
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				Error: File `carte.jpeg' not found.
+				\end{lstlisting}
+				
+			\item \begin{lstlisting}
+				\includegraphics[scale=0,1]{carte.jpg}
+				\end{lstlisting}
+				
+			\item \begin{lstlisting}
+				\begin{figure}
+				\includegraphics{carte.jpg}
+				\end{figure}
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\fbox{ \includegraphics[width=300px]{carte} }
+				\end{lstlisting}
+				
+			\item \begin{lstlisting}
+				\framebox{ \includegraphics[scale=0.37]{carte}
+				\end{lstlisting}
+				
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Tableau}
+	**Un petit tableau 
+	
+	Mettez les six mots ci-dessous dans un petit tableau (avec ou sans bordures) de deux lignes et trois colonnes : 
+	
+	un deux trois 
+	quatre cinq six 
+	
+	\pause
+	
+	\begin{lstlisting}
+	Mettez les six mots ci-dessous dans un petit tableau (avec ou sans bordures) de deux lignes et trois colonnes :
+
+	\begin{tabular}{lll}
+	   un & deux & trois \\
+	   quatre & cinq & six \\
+	\end{tabular}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\small
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\begin{tabular}{llcr}
+				& un & deux & trois
+				& quatre & cinq & six
+				\end{tabular}
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\begin{tabular}{|l|l|l|}
+				\hline
+				un & deux & trois \\
+				\hline
+				quatre & cinq & six \\
+				\hline
+				\end{tabular}
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Citation}
+	Ce paragraphe doit apparaitre comme une citation. Par contre, le nom de l'auteur ci-dessous (anonyme) ne figure pas dans la citation. Il doit être écrit nettement plus petit et aligné à droite. 
+	
+	Anonyme
+	
+	\pause
+	
+	\begin{lstlisting}
+	\begin{quote}
+	Ce paragraphe doit apparaitre comme une citation. Par contre, le nom de l'auteur ci-dessous (anonyme) ne figure pas dans la citation. Il doit etre ecrit nettement plus petit et aligne a droite.
+	\end{quote}
+	\begin{flushright}
+	\tiny
+	Anonyme
+	\end{flushright}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\flushright \small{Anonyme}
+				\end{lstlisting}
+				
+			\item \begin{lstlisting}
+				\verb
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\begin{quotation}
+				\end{lstlisting}
+				
+			\item \begin{lstlisting}
+				\begin{verse}
+				\end{lstlisting}
+			
+			\item \begin{lstlisting}
+				\hfill {\tiny Anonyme}
+				\end{lstlisting}	
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Listes à puce côte à côte}
+	Faites ci-dessous deux listes à puces identiques de trois éléments (les mots un, deux, trois), et placez-les l'une à côté de l'autre (non pas l'une sous l'autre). Espacez-les un peu de ce paragraphe.
+	
+	\pause
+	
+	\begin{multicols}{2}{
+	\footnotesize
+	\begin{lstlisting}
+	Faites ci-dessous deux listes a puces identiques de trois elements (les mots un, deux, trois), et placez-les l'une a cote de l'autre (non pas l'une sous l'autre). Espacez-les un peu de ce paragraphe. 
+	\bigskip
+	
+	\begin{minipage} {0.5\linewidth}
+	\begin{itemize}
+	\item un
+	\item deux
+	\item trois
+	\end{itemize}
+	\end{minipage}
+	\begin{minipage} {0.5\linewidth}
+	\begin{itemize}
+	\item un
+	\item deux
+	\item trois
+	\end{itemize}
+	\end{minipage}
+	\end{lstlisting}
+	}
+	\end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Erreurs et bonnes idées}
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\end{minipage}
+				
+				\begin{minipage}{8pt}
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\linewidth}
+		\begin{itemize}
+			\item \begin{lstlisting}
+				\begin{multicols}{2}
+				\end{lstlisting}
+				
+			\item \begin{lstlisting}
+				\vspace{3cm}
+				\end{lstlisting}
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Barème : un point par puce ci-dessous}
+	\begin{multicols}{2}{
+	\begin{itemize}
+		\item Classe article en 12pt
+		\item Package babel francais
+		\item Encodage UTF8
+		\item Paragraphe en bas de page 1
+		\item Paragraphe suivant en haut de page 2
+		\item Liste numérotée avec les 5 instructions
+		\item Titre "Petit test" et auteur
+		\item Résumé : abstract
+		\item Mots en gras et italique
+		\item Sections, subsections... 
+		\item Table des matières
+		\item Image au bon endroit
+		\item Taille de l'image (ne déborde pas)
+		\item Cadre autour de l'image
+		\item Tableau : 2 lignes 3 colonnes
+		\item Citation
+		\item "Anonyme" plus petit à droite
+		\item Listes côte à côte
+		\item Espace avant les listes
+	\end{itemize}
+	}
+	\end{multicols}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Notes}
+\begin{minipage}[t]{0.48\linewidth}
+%\resizebox{0.99\paperwidth}{!}{	
+\centering
+\begin{tabular}{|l|l|}
+\hline
+21104823	 & 12,17\\
+21003906	 & 10,50\\
+20900491 & 14,83\\
+21104327 & 20,00\\
+21000178 & 18,00\\
+21003023 & 9,83\\
+21003342 & 5,75\\
+21000244 & 12,50\\
+20901506 & 16,50\\
+21102120 & 0,00\\
+21006169 & 11,67\\
+21004313 & 9,33\\
+21004409 & 16,67\\
+21102157 & 18,50\\
+21101244 & 17,00\\
+21000147 & 7,00\\
+\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{0.48\linewidth} 
+\centering
+\begin{tabular}{|l|l|}
+\hline
+21105781 & 17,50\\
+21004767 & 9,92\\
+20900866 & 12,50\\
+21008135 & 12,17\\
+20900717 & 8,50\\
+21000025 & 12,75\\
+21102688 & 14,50\\
+21003309 & 11,50\\
+21000223 & 19,75\\
+21000014 & 14,83\\
+21002339 & 18,00\\
+21000278 & 18,00\\
+21003414 & 13,50\\
+20900999 & 0,00\\
+21101839 & 18,00\\
+21003323 & 6,33 \\
+\hline
+\end{tabular}
+\end{minipage}
+\end{frame}
+
+
+
+\section{Projet collectif}
+\frame{\sectionpage}
+
+\begin{frame}
+	\frametitle{Barème : un point par puce ci-dessous}
+	\begin{itemize}
+		\item respect de la procédure de remise \hfill 2
+		\item erreurs et avertissements de compilation \hfill 7
+		\item présences des commandes LaTeX requises \hfill 8
+		\item bonus / malus \hfill $+/- 1$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Notes}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{| l | l | l | l | l | l | l | l | l | l |}
+\hline
+Groupes&1&2&3&4&5&6&7&8&9\\
+\hline
+&11,2&19,2&14,2&18,1&19,5&18,7&17&18,8&13,3\\
+\hline
+\end{tabular}
+}
+\end{frame}
+
+\end{document}
+
+
