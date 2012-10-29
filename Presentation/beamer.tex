@@ -11,6 +11,23 @@
 \setbeamertemplate{navigation symbols}{}
 \usetheme{Amsterdam}
 
+%--------------------------------------------------------------------------------
+% DEFINE SECTIONPAGE
+%--------------------------------------------------------------------------------
+% For older version of texlive which don't support the \sectionpage command
+%--------------------------------------------------------------------------------
+\setbeamerfont{section title}{parent=title}
+\setbeamercolor{section title}{parent=titlelike}
+\defbeamertemplate*{section page}{default}[1][]
+{
+	\centering
+		\begin{beamercolorbox}[sep=8pt,center,#1]{section title}
+			\usebeamerfont{section title}\insertsection\par
+		\end{beamercolorbox}
+}
+\newcommand*{\sectionpage}{\usebeamertemplate*{section page}}
+%--------------------------------------------------------------------------------
+
 \definecolor{keywords}{RGB}{255,0,0}
 \lstset{language=[LaTeX]TeX,
 texcsstyle=*\color{keywords},
@@ -45,8 +62,31 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \frame{\sectionpage}
 
 \subsection{Hiérarchiques}
-\begin{frame}
-\frametitle{test}
+\begin{frame}{Structure}
+
+Une force militaire conventionnelle est à un arbre complet où~:
+\begin{itemize}
+\item Chaque nœud est commandant de ses nœuds fils,
+\item Les feuilles correspondent aux soldats.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Structure}
+
+\begin{center}
+\begin{tabular}{ l | c c }
+\cellcolor{white}	& \multicolumn{2}{c}{\textbf{Civilisation}} \\
+\textbf{Effectif}	& \textbf{Perse}& \textbf{Mongol} \\
+  \hline
+  $>10^4$		& -										& \textit{Ordu}			\\
+  $10^4$ 		& \textit{Baivarabam} & \textit{Tumen} 		\\
+  $10^3$ 		&	-										& \textit{Myangat} 	\\
+  $10^2$ 		& \textit{Hazarabam} 	& \textit{Zuut} 		\\
+  $10^1$ 		& \textit{Dathabam} 	& \textit{Avaut} 		\\
+\end{tabular}
+\end{center}
+
 \end{frame}
 
 \subsection{Anarchiques}
