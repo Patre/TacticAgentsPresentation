@@ -1,3 +1,6 @@
+# don't include the compiled file
+beamer.pdf
+
 *.aux
 *.bak
 *.bbl
