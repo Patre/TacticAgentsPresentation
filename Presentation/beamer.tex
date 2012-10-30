@@ -10,6 +10,7 @@
 \setbeamertemplate{navigation symbols}{}
 \usetheme{Amsterdam}
 
+\usetikzlibrary{calc}
 \tikzstyle{item}=[rectangle,rounded corners=3pt,thick, dashed, color=beamer@blendedred, fill=gray!20]
 
 % Romain
@@ -73,6 +74,11 @@
 \begin{frame}
 \frametitle{Sun Tzu}
 \framesubtitle{Chine (\siecle{6} BC)}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.1cm,-0.75cm)$) {
+	\includegraphics[width=1.9cm]{../ressources/sun_tzu_general}
+  };
+\end{tikzpicture}
 \begin{quote}“L'art de la guerre, c'est de soumettre l'ennemi sans combat.”\end{quote}
 \vfill
 \begin{columns}[t]
@@ -84,13 +90,13 @@ Préceptes
 \end{itemize}
 \end{column}
 \begin{column}{0.5\linewidth}
-Élaboration d'une stratégie
+Axes stratégiques
 \begin{enumerate}
 \item cause morale
 \item conditions climatiques
 \item conditions géographiques
 \item qualités du dirigeant
-\item organisation et la discipline
+\item organisation et discipline
 \end{enumerate}
 \end{column}
 \end{columns}
@@ -98,8 +104,67 @@ Préceptes
 \footlineextra{\cite{tzu1997art, sun_tzu_fighting, sun_tzu_wiki}}
 \end{frame}
 
+\begin{frame}{Alexandre le grand}
+\framesubtitle{Grèce (\siecle{4} BC)}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.1cm,-0.75cm)$) {
+	\includegraphics[trim=0cm 8cm 0cm 0cm, clip=true, width=1.9cm]{../ressources/AlexanderTheGreat_Bust}
+  };
+\end{tikzpicture}
+\begin{quote}“Ce qui ne me tue pas me rend plus fort.”\end{quote}
+\vfill
+\begin{columns}[t]
+\begin{column}{0.5\linewidth}
+Préceptes
+\begin{itemize}
+\item conscription et intégration des peuples vaincus
+\item allègement de l'équipement des troupes
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+Axes stratégiques
+\begin{enumerate}
+\item assurer ses arrières
+\item choisir judicieusement la voie d'accès pour chaque conquête
+\end{enumerate}
+\end{column}
+\end{columns}
+\footlineextra{\cite{alexander_the_great, alexandre_balkans}}
+\end{frame}
+
+\begin{frame}{Julius Caesar}
+\framesubtitle{Italie (\siecle{1} BC)}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.1cm,-0.75cm)$) {
+	\includegraphics[trim=0cm 8cm 0cm 0cm, clip=true, width=1.9cm]{../ressources/AlexanderTheGreat_Bust}
+  };
+\end{tikzpicture}
+\begin{quote}“.”\end{quote}
+\vfill
+\begin{columns}[t]
+\begin{column}{0.5\linewidth}
+Préceptes
+\begin{itemize}
+\item .
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+Axes stratégiques
+\begin{enumerate}
+\item .
+\end{enumerate}
+\end{column}
+\end{columns}
+\footlineextra{\cite{caesar_wiki}}
+\end{frame}
+
 \begin{frame}{Napoléon Bonaparte}
 \framesubtitle{France (\siecle{18})}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.1cm,-0.75cm)$) {
+	\includegraphics[trim=0cm 2cm 0cm 0cm, clip=true, width=1.9cm]{../ressources/napoleon}
+  };
+\end{tikzpicture}
 \begin{quote}“Réunir ses feux contre un seul point ; une fois la brèche faite, l’équilibre est rompu, tout le reste devient inutile.”\end{quote}
 \vfill
 \begin{columns}[t]
@@ -112,16 +177,16 @@ Préceptes
 \end{itemize}
 \end{column}
 \begin{column}{0.5\linewidth}
-Élaboration d'une stratégie
+Axes stratégiques
 \begin{enumerate}
 \item vitesse de manœuvre : {\emph Blitzkrieg}
-\item de nombreuses fortifications
+\item fortifications
 \item lignes de réapprovisionnement provisoires
 \end{enumerate}
 \end{column}
 \end{columns}
 
-\footlineextra{\cite{napoleon}}
+\footlineextra{\cite{napoleon, napoleon_wiki, napoleon_portrait}}
 \end{frame}
 
 
@@ -131,7 +196,7 @@ Préceptes
 \section{Bibliographie}
 \bibliographystyle{plain}
 %\bibliographystyle{amsalpha}
-\begin{frame}
+\begin{frame}[allowframebreaks]
 \frametitle{Bibliographie}
 \bibliography{../Bib.bib}
 \end{frame}
