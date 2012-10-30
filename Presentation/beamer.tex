@@ -12,6 +12,13 @@
 
 \tikzstyle{item}=[rectangle,rounded corners=3pt,thick, dashed, color=beamer@blendedred, fill=gray!20]
 
+% Romain
+\newcommand{\cRM}[1]{\MakeUppercase{\romannumeral #1}}  % Capital
+\newcommand{\cRm}[1]{\textsc{\romannumeral #1}} % Petit majuscule
+\newcommand{\crm}[1]{\romannumeral #1}
+% Siècle %
+\newcommand{\siecle}[1]{\cRM{#1}\textsuperscript{e}~siècle}
+
 \title{Les stratégies militaires dans les Systèmes Multi-Agents}
 \author{Chloé Desdouits, William Dyce}
 \date{\today}
@@ -57,7 +64,7 @@
 \end{tikzpicture}%
 }\par
 }
-\footlineextra{\cite{ww1}}
+\footlineextra{\cite{ww1, military_strategy, tactic}}
 \end{frame}
 
 
@@ -65,6 +72,7 @@
 
 \begin{frame}
 \frametitle{Sun Tzu}
+\framesubtitle{Chine (\siecle{6} BC)}
 \begin{quote}“L'art de la guerre, c'est de soumettre l'ennemi sans combat.”\end{quote}
 \vfill
 \begin{columns}[t]
@@ -87,11 +95,33 @@ Préceptes
 \end{column}
 \end{columns}
 
-\footlineextra{\cite{tzu1997art}}
+\footlineextra{\cite{tzu1997art, sun_tzu_fighting, sun_tzu_wiki}}
 \end{frame}
 
 \begin{frame}{Napoléon Bonaparte}
+\framesubtitle{France (\siecle{18})}
 \begin{quote}“Réunir ses feux contre un seul point ; une fois la brèche faite, l’équilibre est rompu, tout le reste devient inutile.”\end{quote}
+\vfill
+\begin{columns}[t]
+\begin{column}{0.5\linewidth}
+Préceptes
+\begin{itemize}
+\item recherche systématique de la bataille
+\item destruction totale des forces adverses
+\item être le plus fort à l’endroit où l’on a décidé de frapper le coup décisif
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+Élaboration d'une stratégie
+\begin{enumerate}
+\item vitesse de manœuvre : {\emph Blitzkrieg}
+\item de nombreuses fortifications
+\item lignes de réapprovisionnement provisoires
+\end{enumerate}
+\end{column}
+\end{columns}
+
+\footlineextra{\cite{napoleon}}
 \end{frame}
 
 
