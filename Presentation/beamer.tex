@@ -4,49 +4,36 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-\usepackage{listings}
-\usepackage{multicol}
 \usepackage{tikz}
+\usepackage{bibentry}
 
 \setbeamertemplate{navigation symbols}{}
 \usetheme{Amsterdam}
 
-\definecolor{keywords}{RGB}{255,0,0}
-\lstset{language=[LaTeX]TeX,
-texcsstyle=*\color{keywords},
-breaklines=true,
-keywordstyle=\color{keywords},
-commentstyle=\color{darkgreen},
-tabsize=2,
-backgroundcolor=\color{lightgrey},
-escapeinside=||,
-morekeywords={*,subsection,make title,tableofcontents,include graphics}
-}
-
-%\insertframenumber/\inserttotalframenumber\hskip2ex
-
-\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
-\definecolor{darkgreen}{rgb}{0,0.6,0} 
-\rowcolors{1}{gray!25}{white}
+\tikzstyle{item}=[rectangle,rounded corners=3pt,thick, dashed, color=beamer@blendedred, fill=gray!20]
 
 \title{Les stratégies militaires dans les Systèmes Multi-Agents}
 \author{Chloé Desdouits, William Dyce}
 \date{\today}
 
+%\AtBeginSection[]{
+%  \begin{frame}[plain]
+%  	\frametitle{Sommaire}
+%  	\tableofcontents[currentsection]
+%  \end{frame} 
+%}
+
 \begin{document}
 
-\frame{\titlepage}
+\frame[plain]{\titlepage}
 
-\begin{frame}
-  \tableofcontents
+\begin{frame}[plain]
+	\frametitle{Sommaire}
+	\tableofcontents
 \end{frame} 
 
 \section{Organisations militaires}
 \frame{\sectionpage}
-
-\begin{frame}
-\frametitle{test}
-\end{frame}
 
 
 
@@ -54,14 +41,33 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \frame{\sectionpage}
 
 \begin{frame}
-\frametitle{test}
-\begin{center}
+\pgfdeclareimage[width=6cm]{politique}{../ressources/alliances_ww1}
+\pgfdeclareimage[width=7.5cm]{strategie}{../ressources/strategy_ww1}
+\pgfdeclareimage[width=5cm]{tactique}{../ressources/Battles_of_Charleroi_ww1}
+
+{\centering
+\makebox[0pt]{%
 \begin{tikzpicture}
-\node[draw,rectangle,rounded corners=3pt] (P)at(0,2){Politique};
-\node[draw,rectangle,rounded corners=3pt] (S)at(0,1){Stratégie};
-\node[draw,rectangle,rounded corners=3pt] (T)at(0,0){Tactique};
-\end{tikzpicture}
-\end{center}
+\node[] (Si) at(0,-3) {\pgfbox[left,center] {\pgfuseimage{strategie}}};
+\node[] (Pi) at(12.6,-2.66) {\pgfbox[right,bottom] {\pgfuseimage{politique}}};
+\node[] (Ti) at(12.6,-5.7) {\pgfbox[right,center] {\pgfuseimage{tactique}}};
+\node[draw,item] (P) at(5.5,0.4) {Politique};
+\node[draw,item] (S) at(8.5,-3.2) {Stratégie};
+\node[draw,item] (T) at(5.5,-6.5) {Tactique};
+\node[draw=none] at(0.5,-6.5) {\cite{ww1}};
+\end{tikzpicture}%
+}\par
+}
+\end{frame}
+
+
+\subsection{Stratégies}
+\begin{frame}
+\nobibliography*
+\frametitle{\bibentry{tzu1997art}}
+\begin{itemize}
+\item 
+\end{itemize}
 \end{frame}
 
 
@@ -70,6 +76,7 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 
 \section{Bibliographie}
 \bibliographystyle{plain}
+%\bibliographystyle{amsalpha}
 \begin{frame}
 \frametitle{Bibliographie}
 \bibliography{../Bib.bib}
