@@ -5,6 +5,7 @@ Presentation/beamer.pdf
 # no backup files
 *.bak
 *~
+*.orig
 
 # no latex build files
 *.aux
