@@ -47,12 +47,29 @@
 
 \section{Stratégies et tactiques}
 
+\begin{frame}
+
+\begin{tikzpicture}
+\node[draw,item] (P) at(0,6) {Politique};
+\node[draw=none] (Pe) at(6,6) {\begin{quote}“La politique de la guerre c’est tout simplement décider où, quand, comment, avec quels alliés et pourquoi entrer en guerre.”\end{quote}};
+\end{tikzpicture}
+\pause
+\begin{tikzpicture}
+\node[draw,item] (S) at(0,3) {Stratégie};
+\node[draw=none] (Se) at(6,3) {\begin{quote}“La stratégie militaire est l'art de coordonner -au plus haut niveau de décision- l'action de l'ensemble des forces militaires de la Nation pour conduire une guerre, gérer une crise ou préserver la paix.”\end{quote}};
+\end{tikzpicture}
+\pause
+\begin{tikzpicture}
+\node[draw,item] (T) at(0,0) {Tactique};
+\node[draw=none] (Te) at(6,0) {\begin{quote}“La tactique est l'art de diriger une bataille, en combinant, par la manœuvre, l'action des différents moyens de combat en vue d'obtenir le maximum d'efficacité.”\end{quote}};
+\end{tikzpicture}%
+\footlineextra{\cite{military_strategy, tactic, politique_jomini}}
+\end{frame}
 
 \begin{frame}
 \pgfdeclareimage[width=6cm]{politique}{../ressources/alliances_ww1}
 \pgfdeclareimage[width=7.5cm]{strategie}{../ressources/strategy_ww1}
 \pgfdeclareimage[width=5cm]{tactique}{../ressources/Battles_of_Charleroi_ww1}
-
 {\centering
 \makebox[0pt]{%
 \begin{tikzpicture}
@@ -232,6 +249,7 @@ Axes stratégiques
 \item choix politique et géographique de la voie de progression
 \end{itemize}
 \vfill
+\pause
 \emph{Choix stratégiques opposés :}
 
 \bigskip
@@ -246,8 +264,43 @@ effectifs réduits & armée expansive\\
 
 
 \subsection{Tactiques}
-\begin{frame}{test}
 
+\begin{frame}{Manœuvre de flanquement}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.1cm,-0.75cm)$) {
+	\includegraphics[height=0.5\paperheight]{../ressources/Battle_of_Marathon}
+	};
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(0.1cm,0.45cm)$) {
+	\fbox{\includegraphics[height=0.53\paperheight]{../ressources/Battle_of_Mohi}}
+	};
+	\node[draw,item,anchor=north east] at($(current page.north east)+(-0.2cm,-5.7cm)$) {contre une position défensive};
+	\node[draw,item,anchor=south east] at($(current page.south east)+(-0.2cm,2.5cm)$) {prise en tenaille};
+	\node[draw,item,anchor=north west] at($(current page.north west)+(0.4cm,-2.0cm)$) {embuscade};
+\end{tikzpicture}
+\footlineextra{\cite{tactic, flanking_maneuver, pincer_tactic}}
+\end{frame}
+
+\begin{frame}{Retraite feinte}
+
+\footlineextra{\cite{mongol_army}}
+\end{frame}
+
+\begin{frame}{Le marteau et l'enclume}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(1cm,-1.75cm)$) {
+	\includegraphics[trim=0.5cm 0.5cm 0.5cm 0.5cm, clip=true, scale=0.25]{../ressources/marteau}
+	};
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-1cm,-1.75cm)$) {
+	\includegraphics[trim=0.5cm 0.7cm 0.5cm 0.7cm, clip=true, scale=0.25]{../ressources/marteau2}
+	};
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(1cm,0.45cm)$) {
+	\includegraphics[scale=0.25]{../ressources/enclume}
+	};
+	\node[anchor=south east,inner sep=0pt] at ($(current page.south east)+(-1.4cm,1.2cm)$) {
+	\includegraphics[scale=0.25]{../ressources/enclume2}
+	};
+\end{tikzpicture}
+\footlineextra{\cite{Alexanders_tactics}}
 \end{frame}
 
 
