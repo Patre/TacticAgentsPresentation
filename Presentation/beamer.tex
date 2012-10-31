@@ -7,12 +7,11 @@
 \usepackage{tikz}
 \usepackage{bibentry}
 
+\setbeamertemplate{bibliography item}[text]
 \setbeamertemplate{navigation symbols}{}
 \usetheme{Amsterdam}
-
 \usetikzlibrary{calc}
 \tikzstyle{item}=[rectangle,rounded corners=3pt,thick, dashed, color=beamer@blendedred, fill=gray!20]
-
 % Romain
 \newcommand{\cRM}[1]{\MakeUppercase{\romannumeral #1}}  % Capital
 \newcommand{\cRm}[1]{\textsc{\romannumeral #1}} % Petit majuscule
@@ -24,12 +23,13 @@
 \author{Chloé Desdouits, William Dyce}
 \date{\today}
 
-%\AtBeginSection[]{
-%  \begin{frame}[plain]
-%  	\frametitle{Sommaire}
-%  	\tableofcontents[currentsection]
-%  \end{frame} 
-%}
+\AtBeginSection[]{
+  \begin{frame}[plain]
+  	\frametitle{Sommaire}
+  	\tableofcontents[currentsection]
+  \end{frame} 
+}
+%\frame{\sectionpage}
 
 \begin{document}
 
@@ -41,12 +41,12 @@
 \end{frame} 
 
 \section{Organisations militaires}
-\frame{\sectionpage}
+
 
 
 
 \section{Stratégies et tactiques}
-\frame{\sectionpage}
+
 
 \begin{frame}
 \pgfdeclareimage[width=6cm]{politique}{../ressources/alliances_ww1}
@@ -136,26 +136,61 @@ Axes stratégiques
 \framesubtitle{Italie (\siecle{1} BC)}
 \begin{tikzpicture}[remember picture,overlay]
 	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.1cm,-0.75cm)$) {
-	\includegraphics[trim=0cm 8cm 0cm 0cm, clip=true, width=1.9cm]{../ressources/AlexanderTheGreat_Bust}
+	\includegraphics[trim=0cm 20cm 0cm 0cm, clip=true, width=1.9cm]{../ressources/cesare}
   };
 \end{tikzpicture}
-\begin{quote}“.”\end{quote}
+\begin{quote}“L’expérience, voilà le maître en toutes choses.”\end{quote}
 \vfill
 \begin{columns}[t]
 \begin{column}{0.5\linewidth}
 Préceptes
 \begin{itemize}
-\item .
+\item stabilité militaire et logistique
 \end{itemize}
 \end{column}
 \begin{column}{0.5\linewidth}
 Axes stratégiques
 \begin{enumerate}
-\item .
+\item infanterie lourde
+\item bataillons étrangers spécialisés
+\item formations en fonction des conditions géographiques
+\item bivouac fortifié
 \end{enumerate}
 \end{column}
 \end{columns}
-\footlineextra{\cite{caesar_wiki}}
+\footlineextra{\cite{caesar_wiki, caesar_lacks}}
+\end{frame}
+
+\begin{frame}{Genghis Khan}
+\framesubtitle{Mongolie (\siecle{12})}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.1cm,-0.75cm)$) {
+	\includegraphics[trim=0cm 1cm 0cm 1cm, clip=true, width=1.9cm]{../ressources/genghis_khan}
+  };
+\end{tikzpicture}
+\begin{quote}“Le plus grand bonheur du Mongol est de vaincre l’ennemi, de ravir ses trésors, de faire hurler ses serviteurs, de se sauver au galop de ses chevaux bien nourris [\ldots]”\end{quote}
+\vfill
+\begin{columns}[t]
+\begin{column}{0.5\linewidth}
+Préceptes
+\begin{itemize}
+\item guerre psychologique
+\item règne de la terreur
+\item connaissance du terrain : espionnage ; éclaireurs
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+Axes stratégiques
+\begin{enumerate}
+\item peu de troupes ; avant-garde forte
+\item troupes montées % logistique et vitesse
+\item délégation des décisions
+\item relais de communication et ravitaillement
+\item attaques biologiques
+\end{enumerate}
+\end{column}
+\end{columns}
+\footlineextra{\cite{khan_wiki, military_strategy, mongol_army}}
 \end{frame}
 
 \begin{frame}{Napoléon Bonaparte}
@@ -182,16 +217,42 @@ Axes stratégiques
 \item vitesse de manœuvre : {\emph Blitzkrieg}
 \item fortifications
 \item lignes de réapprovisionnement provisoires
+\item artillerie
 \end{enumerate}
 \end{column}
 \end{columns}
-
 \footlineextra{\cite{napoleon, napoleon_wiki, napoleon_portrait}}
+\end{frame}
+
+\begin{frame}{Synthèse}
+\emph{Consensus sur les points stratégiques suivants :}
+\begin{itemize}
+\item connaissance du terrain et des forces en présence
+\item organisation et discipline
+\item choix politique et géographique de la voie de progression
+\end{itemize}
+\vfill
+\emph{Choix stratégiques opposés :}
+
+\bigskip
+\begin{tabular}{rl}
+adaptabilité, délégation, flexibilité & organisation rigide\\
+absorption et intégration de l'adversaire & le détruire et le terroriser\\
+troupes légères et mobiles & troupes lourdes\\
+campements provisoires & fortifications\\
+effectifs réduits & armée expansive\\
+\end{tabular}
+\end{frame}
+
+
+\subsection{Tactiques}
+\begin{frame}{test}
+
 \end{frame}
 
 
 \section{Applications aux systèmes multi-agents}
-\frame{\sectionpage}
+
 
 \section{Bibliographie}
 \bibliographystyle{plain}
