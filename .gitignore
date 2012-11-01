@@ -1,8 +1,14 @@
 # don't include the compiled file
 beamer.pdf
+Presentation/beamer.pdf
 
-*.aux
+# no backup files
 *.bak
+*~
+*.orig
+
+# no latex build files
+*.aux
 *.bbl
 *.blg
 *.dvi
