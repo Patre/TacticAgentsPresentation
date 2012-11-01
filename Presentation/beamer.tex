@@ -50,7 +50,6 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
   	\tableofcontents[currentsection]
   \end{frame} 
 }
-%\frame{\sectionpage}
 
 \begin{document}
 
@@ -62,7 +61,6 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \end{frame} 
 
 \section{Organisations militaires}
-\frame{\sectionpage}
 
 \subsection{Hiérarchiques}
 \begin{frame}{Structure}
@@ -288,29 +286,10 @@ Axes stratégiques
 \footlineextra{\cite{napoleon, napoleon_wiki, napoleon_portrait}}
 \end{frame}
 
-\begin{frame}{Synthèse}
-%\emph{Consensus sur les points stratégiques suivants :}
-%\begin{itemize}
-%\item connaissance du terrain et des forces en présence
-%\item organisation et discipline
-%\item choix politique et géographique de la voie de progression
-%\end{itemize}
-%\vfill
-%\pause
-%\emph{Choix stratégiques opposés :}
-%
-%\bigskip
-%\begin{tabular}{rl}
-%adaptabilité, délégation, flexibilité & organisation rigide\\
-%absorption et intégration de l'adversaire & le détruire et le terroriser\\
-%troupes légères et mobiles & troupes lourdes\\
-%campements provisoires & fortifications\\
-%effectifs réduits & armée expansive\\
-%\end{tabular}
-
+\begin{frame}{~ }
 \begin{tabular}{|p{0.45\linewidth}|p{0.45\linewidth}|}
 \hline
-stratégie indirecte & stratégie directe\\
+\emph{Stratégie indirecte} & \emph{Stratégie directe}\\
 \hline
 renseignement & conscription\\
 embuscade & recherche de la bataille décisive\\
@@ -318,7 +297,21 @@ tromperie & planification et formations\\
 sabotage & fortifications\\
 \hline
 \end{tabular}
-   
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=south east,inner sep=0pt] at ($(current page.south east)+(-1.35cm,0.4cm)$) {
+		\includegraphics[trim=1.5cm 0cm 0cm 0cm, clip=true, scale=0.31]{../ressources/Vauban_Fort_Lupin}
+	};
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-2.4cm,-0.8cm)$) {
+		\includegraphics[trim=0cm 1cm 0cm 1cm, clip=true, scale=0.14]{../ressources/tortue}
+	};
+	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(2.15cm,-0.8cm)$) {
+		\includegraphics[trim=0cm 1cm 0cm 0cm, clip=true, scale=0.19]{../ressources/mongol_army}
+	};
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(1.3cm,0.4cm)$) {
+		\includegraphics[scale=0.217]{../ressources/sabotage_maquisards}
+	};
+\end{tikzpicture}
+\footlineextra{\cite{fort_lupin,war}}
 \end{frame}
 
 
