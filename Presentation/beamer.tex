@@ -43,22 +43,38 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \title{Les stratégies militaires dans les Systèmes Multi-Agents}
 \author{Chloé Desdouits, William Dyce}
 \date{\today}
+\setbeamercolor{title}{fg=beamer@blendedred}
+\setbeamercolor{author}{fg=beamer@blendedred}
+\setbeamercolor{date}{fg=beamer@blendedred}
+
 
 \AtBeginSection[]{
-  \begin{frame}[plain]
+{
+\setbeamertemplate{headline}{\vbox{\usebeamertemplate*{headlinesom}}}
+  \begin{frame}
   	\frametitle{Sommaire}
   	\tableofcontents[currentsection]
   \end{frame} 
+  }
 }
 
 \begin{document}
 
-\frame[plain]{\titlepage}
+{
+\usebackgroundtemplate{\pgfsetfillopacity{0.3}\includegraphics[trim=10cm 0cm 0cm 0cm, clip=true, height=\paperheight]{../ressources/civilization-5}\pgfsetfillopacity{1}
+	}
+\frame[plain]{
+	\titlepage
+	}
+}
 
-\begin{frame}[plain]
+{
+\setbeamertemplate{headline}{\vbox{\usebeamertemplate*{headlinesom}}}
+\begin{frame}
 	\frametitle{Sommaire}
 	\tableofcontents
 \end{frame} 
+}
 
 \section{Organisations militaires}
 
@@ -90,7 +106,7 @@ Une force militaire conventionnelle est à un arbre complet où~:
 
 \end{frame}
 
-\section{Stratégies et tactiques}
+\section{Stratégies militaires}
 
 \begin{frame}
 
@@ -315,7 +331,72 @@ sabotage & fortifications\\
 \end{frame}
 
 
+\subsection{Formations et unités}
+
+\begin{frame}{Infanterie}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(0.1cm,0.45cm)$) {
+		\includegraphics[trim=0cm 0cm 0cm 15cm, clip=true, width=0.42\paperwidth]{../ressources/Roman_soldier}
+	};
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.15cm,-2.6cm)$) {
+		\includegraphics[width=0.55\paperwidth]{../ressources/JGDSF_Soldiers}
+	};
+\end{tikzpicture}
+\footlineextra{\cite{infantery}}
+\end{frame}
+
+\begin{frame}{Archerie montée}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(0.1cm,-2.6cm)$) {
+		\includegraphics[width=0.5\paperwidth]{../ressources/IlkhanidHorseArcher}
+	};
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.15cm,-1.6cm)$) {
+		\includegraphics[width=0.47\paperwidth]{../ressources/MongolCavalrymen}
+	};
+\end{tikzpicture}
+\footlineextra{\cite{archery,mongol_army}}
+\end{frame}
+
+\begin{frame}{Cavalerie lourde}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(0.1cm,0.45cm)$) {
+		\includegraphics[width=0.44\paperwidth]{../ressources/Ottoman_Mamluk_horseman}
+	};
+	\node[anchor=south east,inner sep=0pt] at ($(current page.south east)+(-0.15cm,0.45cm)$) {
+		\includegraphics[width=0.5\paperwidth]{../ressources/cuirassiers}
+	};
+\end{tikzpicture}
+\footlineextra{\cite{heavy_cavalry}}
+\end{frame}
+
+\begin{frame}{Formation en triple ligne}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(2.5cm,-1.6cm)$) {
+	\includegraphics[scale=0.4]{../ressources/Polybian_formation}
+	};
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(1.3cm,0.2cm)$) {
+	\includegraphics[scale=0.5]{../ressources/Formations_infanterie_romaine}
+	};
+\end{tikzpicture}
+\footlineextra{\cite{roman_infantry_tactics}}
+\end{frame}
+
+
 \subsection{Tactiques}
+
+\begin{frame}{Charge}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.1cm,-0.75cm)$) {
+	\includegraphics[height=0.5\paperheight]{../ressources/Charge-de-cavalerie}
+	};
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(0.1cm,0.45cm)$) {
+	\includegraphics[height=0.53\paperheight]{../ressources/charge_infanterie}
+	};
+	\node[draw,item,anchor=north west] at($(current page.north west)+(0.2cm,-3.4cm)$) {infanterie};
+	\node[draw,item,anchor=north east] at($(current page.north east)+(-0.2cm,-5.65cm)$) {cavalerie};
+\end{tikzpicture}
+\footlineextra{\cite{charge_tactic, charge_cavalery}}
+\end{frame}
 
 \begin{frame}{Manœuvre de flanquement}
 \begin{tikzpicture}[remember picture,overlay]
@@ -328,11 +409,6 @@ sabotage & fortifications\\
 	\node[draw,item,anchor=north east] at($(current page.north east)+(-0.2cm,-5.7cm)$) {prise en tenaille};
 \end{tikzpicture}
 \footlineextra{\cite{tactic, flanking_maneuver, pincer_tactic}}
-\end{frame}
-
-\begin{frame}{Retraite feinte}
-
-\footlineextra{\cite{mongol_army}}
 \end{frame}
 
 \begin{frame}{Le marteau et l'enclume}
@@ -353,22 +429,41 @@ sabotage & fortifications\\
 \footlineextra{\cite{Alexanders_tactics}}
 \end{frame}
 
-\begin{frame}{Formation en triple ligne}
+\begin{frame}{Contre-attaque}
 \begin{tikzpicture}[remember picture,overlay]
-	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(2.5cm,-1.6cm)$) {
-	\includegraphics[scale=0.4]{../ressources/Polybian_formation}
+	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(0.1cm,-1.6cm)$) {
+	\includegraphics[trim=0cm 2.5cm 0cm 0cm, clip=true, width=0.47\paperwidth]{../ressources/Cedar_Creek_Confederate_attacks}
 	};
-	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(1.3cm,0.2cm)$) {
-	\includegraphics[scale=0.5]{../ressources/Formations_infanterie_romaine}
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(-0.15cm,-1.6cm)$) {
+	\includegraphics[width=0.5\paperwidth]{../ressources/Cedar_Creek_Union_counterattack}
+	};
+	\node[draw,item,anchor=south west] at($(current page.south west)+(2.0cm,0.4cm)$) {attaque};
+	\node[draw,item,anchor=south east] at($(current page.south east)+(-2.0cm,0.4cm)$) {contre-attaque};
+\end{tikzpicture}
+\footlineextra{\cite{counterattack_wiki, couterattack_cedar_creek}}
+\end{frame}
+
+\begin{frame}{Retraite feinte}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(0.1cm,-3cm)$) {
+		\includegraphics[width=0.98\paperwidth]{../ressources/infantrysquare3}
 	};
 \end{tikzpicture}
-\footlineextra{\cite{roman_infantry_tactics}}
+\footlineextra{\cite{mongol_army,feigned_retreat}}
 \end{frame}
 
-\begin{frame}{Défense élastique}
-\footlineextra{\cite{tactic}}
-\end{frame}
 
+\begin{frame}{Embuscade}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north east,inner sep=0pt] at ($(current page.north east)+(0.5cm,-0.2cm)$) {
+		\includegraphics[height=0.8\paperheight]{../ressources/Uzbin_valley_ambush-map}
+	};
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(0.1cm,0.45cm)$) {
+		\includegraphics[height=0.3\paperheight]{../ressources/ambush}
+	};
+\end{tikzpicture}
+\footlineextra{\cite{ambush_wiki, uzbin_ambush, ambush_picture}}
+\end{frame}
 
 
 \section{Applications aux systèmes multi-agents}
