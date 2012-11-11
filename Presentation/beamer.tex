@@ -8,6 +8,7 @@
 \usepackage{multicol}
 \usepackage{tikz}
 \usepackage{bibentry}
+\usepackage{algorithm,algorithmic}
 
 \setbeamertemplate{bibliography item}[text]
 \setbeamertemplate{navigation symbols}{}
@@ -48,14 +49,15 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \setbeamercolor{date}{fg=beamer@blendedred}
 
 
-\AtBeginSection[]{
+\AtBeginSubsection[]
 {
-\setbeamertemplate{headline}{\vbox{\usebeamertemplate*{headlinesom}}}
-  \begin{frame}
-  	\frametitle{Sommaire}
-  	\tableofcontents[currentsection]
-  \end{frame} 
-  }
+	{
+	\setbeamertemplate{headline}{\vbox{\usebeamertemplate*{headlinesom}}}
+	\begin{frame}
+		\frametitle{Sommaire}
+		\tableofcontents[currentsubsection]
+	\end{frame} 
+	}
 }
 
 \begin{document}
@@ -76,35 +78,59 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \end{frame} 
 }
 
-\section{Organisations militaires}
+
+
+\section{Organisations guerrières}
 
 \subsection{Hiérarchiques}
-\begin{frame}{Structure}
 
-Une force militaire conventionnelle est à un arbre complet où~:
+\begin{frame}{Contexte}
 \begin{itemize}
-\item Chaque nœud est commandant de ses nœuds fils,
-\item Les feuilles correspondent aux soldats.
+\item armées
+\item organismes d'état
+\item structurées / hiérarchiques
+\item constituées de beaucoup de soldats
+\item conscrits / volontaires / de métier
 \end{itemize}
-
+\footlineextra{}
 \end{frame}
 
-\begin{frame}{Structure}
-
-\begin{center}
-\begin{tabular}{ l | c c }
-\cellcolor{white}	& \multicolumn{2}{c}{\textbf{Civilisation}} \\
-\textbf{Effectif}	& \textbf{Perse}& \textbf{Mongol} \\
-  \hline
-  $>10^4$		& -										& \textit{Ordu}			\\
-  $10^4$ 		& \textit{Baivarabam} & \textit{Tumen} 		\\
-  $10^3$ 		&	-										& \textit{Myangat} 	\\
-  $10^2$ 		& \textit{Hazarabam} 	& \textit{Zuut} 		\\
-  $10^1$ 		& \textit{Dathabam} 	& \textit{Avaut} 		\\
+\begin{frame}{Organisation des unités}
+\makebox[\linewidth]{
+\resizebox{\paperwidth}{!}{
+\begin{tabular}{| c l | c l | c l | c l |}
+	\hline
+	\multicolumn{8}{| c |}{\textbf{Armée}}
+	\\
+	\multicolumn{2}{| c |}{\textbf{Spartiate}} 	& \multicolumn{2}{ c |}{\textbf{Romaine}} & \multicolumn{2}{ c |}{\textbf{Perse}}	& \multicolumn{2}{ c |}{\textbf{Mongole}} 	\\
+	\hline
+	 					&			& 					&			& 				&			& \textit{Ordu}		& > 10000			\\
+	 \itshape Mora 			& 576		& \itshape Légion		& 6000		& \textit{Baivarabam}& 10000		& \textit{Tumen} 	& 10000			\\
+	 \itshape Loche			& 144		& \itshape Cohorte		& 600		& \textit{Hazarabam}	& 1000		& \textit{Minghan}  	& 1000			\\
+	 \itshape Pentécostye	& 72			& \itshape Manipule		& 200		& \textit{satabam}	& 100		& \textit{Zuut} 		& 100			\\
+	 \itshape Énomotie		& 36			& \itshape Centurie		& 100		& \textit{Dathabam} 	& 10			& \textit{Arav} 		& 10				\\
+	\hline
 \end{tabular}
-\end{center}
-
+}}
+\footlineextra{\cite{mongol_army, spart_army, roman_legion,persian_army}}
 \end{frame}
+
+
+\subsection{Guérillas}
+
+\begin{frame}{Contexte}
+\begin{itemize}
+\item leader
+\item asymétrie des forces
+\item mobilité
+\item hit and run tactique
+\item terreur
+\item terrain propice
+\item idéologie et support de la population
+\end{itemize}
+\footlineextra{}
+\end{frame}
+
 
 \section{Stratégies militaires}
 
@@ -345,7 +371,7 @@ sabotage & fortifications\\
 \footlineextra{\cite{infantery}}
 \end{frame}
 
-\begin{frame}{Archerie montée}
+\begin{frame}{Cavalerie légère}
 \begin{tikzpicture}[remember picture,overlay]
 	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(0.1cm,-2.6cm)$) {
 		\includegraphics[width=0.5\paperwidth]{../ressources/IlkhanidHorseArcher}
@@ -541,8 +567,46 @@ sabotage & fortifications\\
 	\node[inner sep=0pt,anchor=north west] at($(current page.north west)+(0.9cm,-5.4cm)$) {
 		\includegraphics[scale=0.5]{../ressources/doran}
 	};
-	\node[draw,item,anchor=north west] at($(current page.north west)+(1.9cm,-3cm)$) {
+	\node[draw,item,anchor=north west] at($(current page.north west)+(1.8cm,-3cm)$) {
 		2005
+	};
+	\node[inner sep=0pt,anchor=south east] at($(current page.south east)+(-0.1cm,0.4cm)$) {
+		\includegraphics[width=0.5\paperwidth]{../ressources/insurgency}
+	};
+\end{tikzpicture}
+\vspace{-2.8cm}\begin{columns}[t]
+	\begin{column}{0.4\paperwidth}
+	\end{column}
+	\begin{column}[b]{0.5\paperwidth}
+            \begin{minipage}[b]{0.5\paperwidth}
+		\begin{algorithmic}[1]
+		\WHILE{non termination}			\STATE Attacks and their impact			\STATE HQ decisions
+			\STATE Recruitment
+			\STATE Force movement		\ENDWHILE
+		\end{algorithmic}
+	\end{minipage}
+        \end{column}
+\end{columns}
+\footlineextra{\cite{doran2005iruba}}
+\end{frame}
+
+\begin{frame}{Iruba}
+\framesubtitle{Stratégies influentes influentes}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[draw,item,anchor=north west] at($(current page.north west)+(1.0cm,-3cm)$) {
+		initial guerrilla band size
+	};
+	\node[draw,item,anchor=north west] at($(current page.north west)+(1.4cm,-5cm)$) {
+		regime force concentration
+	};
+	\node[draw,item,anchor=north west] at($(current page.north west)+(8.0cm,-3cm)$) {
+		insurgent mobility
+	};
+	\node[draw,item,anchor=north west] at($(current page.north west)+(6.4cm,-5cm)$) {
+		insurgent hyper-mobility
+	};
+	\node[draw,item,anchor=north west] at($(current page.north west)+(3.8cm,-7cm)$) {
+		all-out regime counter attack
 	};
 \end{tikzpicture}
 \footlineextra{\cite{doran2005iruba}}
