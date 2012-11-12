@@ -83,7 +83,35 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 
 \section{Organisations guerrières}
 
-\subsection{Hiérarchiques}
+\subsection{Armées}
+
+\begin{frame}{Structure}
+\setbeamertemplate{itemize subitem}[triangle]
+\begin{columns}[c]
+	\begin{column}[c]{0.48\linewidth}
+		\begin{centering}
+		\includegraphics[trim=0cm 0cm 0cm 0cm, clip=true, width=0.2\paperwidth]{../ressources/Roman_soldier}
+		\end{centering}
+	\end{column}
+	\begin{column}[c]{0.48\linewidth}
+		\begin{itemize}
+			\item leader
+			\begin{itemize}
+				\item politique
+				\item religieux
+			\end{itemize}
+		\end{itemize}
+	\end{column}
+\end{columns}
+\begin{itemize}
+	\item homogénéité
+	\begin{itemize}
+		\item hiérarchie militaire
+		\item formations
+	\end{itemize}
+\end{itemize}
+\footlineextra{}
+\end{frame}
 
 \begin{frame}{Contexte}
 \begin{itemize}
@@ -97,42 +125,30 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \end{frame}
 
 \begin{frame}{Hiérarchie}
-\begin{tikzpicture}[	level 1/.style={sibling distance=50mm}, 
+\makebox[0.99\linewidth]{
+\begin{tikzpicture}[	level 1/.style={sibling distance=60mm}, 
 				level 2/.style={sibling distance=25mm}, 
-				level 3/.style={sibling distance=15mm}]
-	\node [circle,draw] (z){$n$}
-		child {node [circle,draw] (a) {$\frac{n}{2}$}
-			child {node [circle,draw] (b) {$\frac{n}{2^2}$}
-				child {node {$\vdots$}
-					child {node [circle,draw] (d) {soldat}}
-					child {node [circle,draw] (e) {soldat}}
-				} 
-				child {node {$\vdots$}}
+				level 3/.style={sibling distance=20mm}]
+	\node [circle,draw] (z){général}
+		child {node [item,draw] (a) {officier}
+			child {node [item,draw] (b) {sous-officier}
+					child {node [item,draw] (d) {militaire}}
+					child {node [item,draw] (e) {militaire}}
 			}
-			child {node [circle,draw] (g) {$\frac{n}{2^2}$}
-				child {node {$\vdots$}}
-				child {node {$\vdots$}}
-			}
+			child {node [item,draw] (c) {sous-officier}}
 		}
-		child {node [circle,draw] (j) {$\frac{n}{2}$}
-			child {node [circle,draw] (k) {$\frac{n}{2^2}$}
-				child {node {$\vdots$}}
-				child {node {$\vdots$}}
-			}
-			child {node [circle,draw] (l) {$\frac{n}{2^2}$}
-				child {node {$\vdots$}}
-				child {node (c){$\vdots$}
-					child {node [circle,draw] (o) {soldat}}
-					child {node [circle,draw] (p) {soldat}
-						child [grow=right] {node (q) {$=$} edge from parent[draw=none]
-							child [grow=up] {node (r) {$\vdots$} edge from parent[draw=none]
-							}
-						}
-					}
-				}
+		child {node [item,draw] (j) {officier}
+			child {node [item,draw] (k) {sous-officier}}
+			child {node [item,draw] (l) {sous-officier}
+				child {node [item,draw] (o) {militaire}}
+				child {node [item,draw] (p) {militaire}}
 			}
 		};
+	\path (a) -- (j)  node [midway] {\ldots};
+	\path (b) -- (l) node [midway] {\ldots};
+	\path (d) -- (p) node [midway] {\ldots};
 \end{tikzpicture}
+}
 \footlineextra{}
 \end{frame}
 
