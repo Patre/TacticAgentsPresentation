@@ -6,6 +6,7 @@
 \usepackage[french]{babel}
 \usepackage{listings}
 \usepackage{multicol}
+\usepackage{fancybox}
 \usepackage{tikz}
 \usepackage{bibentry}
 \usepackage{algorithm,algorithmic}
@@ -95,8 +96,48 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \footlineextra{}
 \end{frame}
 
+\begin{frame}{Hiérarchie}
+\begin{tikzpicture}[	level 1/.style={sibling distance=50mm}, 
+				level 2/.style={sibling distance=25mm}, 
+				level 3/.style={sibling distance=15mm}]
+	\node [circle,draw] (z){$n$}
+		child {node [circle,draw] (a) {$\frac{n}{2}$}
+			child {node [circle,draw] (b) {$\frac{n}{2^2}$}
+				child {node {$\vdots$}
+					child {node [circle,draw] (d) {soldat}}
+					child {node [circle,draw] (e) {soldat}}
+				} 
+				child {node {$\vdots$}}
+			}
+			child {node [circle,draw] (g) {$\frac{n}{2^2}$}
+				child {node {$\vdots$}}
+				child {node {$\vdots$}}
+			}
+		}
+		child {node [circle,draw] (j) {$\frac{n}{2}$}
+			child {node [circle,draw] (k) {$\frac{n}{2^2}$}
+				child {node {$\vdots$}}
+				child {node {$\vdots$}}
+			}
+			child {node [circle,draw] (l) {$\frac{n}{2^2}$}
+				child {node {$\vdots$}}
+				child {node (c){$\vdots$}
+					child {node [circle,draw] (o) {soldat}}
+					child {node [circle,draw] (p) {soldat}
+						child [grow=right] {node (q) {$=$} edge from parent[draw=none]
+							child [grow=up] {node (r) {$\vdots$} edge from parent[draw=none]
+							}
+						}
+					}
+				}
+			}
+		};
+\end{tikzpicture}
+\footlineextra{}
+\end{frame}
+
 \begin{frame}{Organisation des unités}
-\makebox[\linewidth]{
+\makebox[0.99\linewidth]{
 \resizebox{\paperwidth}{!}{
 \begin{tabular}{| c l | c l | c l | c l |}
 	\hline
@@ -134,8 +175,9 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 
 \section{Stratégies militaires}
 
-\begin{frame}
+\subsection{Définitions}
 
+\begin{frame}
 \begin{tikzpicture}
 \node[draw,item] (P) at(0,6) {Politique};
 \node[draw=none] (Pe) at(6,6) {\begin{quote}“La politique de la guerre c’est tout simplement décider où, quand, comment, avec quels alliés et pourquoi entrer en guerre.”\end{quote}};
@@ -580,9 +622,12 @@ sabotage & fortifications\\
 	\begin{column}[b]{0.5\paperwidth}
             \begin{minipage}[b]{0.5\paperwidth}
 		\begin{algorithmic}[1]
-		\WHILE{non termination}			\STATE Attacks and their impact			\STATE HQ decisions
+		\WHILE{non termination}
+			\STATE Attacks and their impact
+			\STATE HQ decisions
 			\STATE Recruitment
-			\STATE Force movement		\ENDWHILE
+			\STATE Force movement
+		\ENDWHILE
 		\end{algorithmic}
 	\end{minipage}
         \end{column}
@@ -610,6 +655,25 @@ sabotage & fortifications\\
 	};
 \end{tikzpicture}
 \footlineextra{\cite{doran2005iruba}}
+\end{frame}
+
+\begin{frame}{RPDAgent}
+\framesubtitle{Enhanced Military Decision Modeling Using a MultiAgent System Approach}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[draw,item,anchor=north west] at($(current page.north west)+(0.9cm,-5cm)$) {
+		John A. Sokolowski
+	};
+	\node[inner sep=0pt,anchor=north west] at($(current page.north west)+(1.3cm,-5.8cm)$) {
+		\includegraphics[scale=0.5]{../ressources/john_sokolowski}
+	};
+	\node[draw,item,anchor=north west] at($(current page.north west)+(1.9cm,-3cm)$) {
+		2003
+	};
+	\node[inner sep=0pt] at (0.6\paperwidth,-0.7cm) {
+		\includegraphics[height=0.7\paperheight]{../ressources/RPDagent_uml}
+	};
+\end{tikzpicture}
+\footlineextra{\cite{sokolowski2003}}
 \end{frame}
 
 
