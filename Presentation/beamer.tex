@@ -11,9 +11,10 @@
 \usepackage{bibentry}
 \usepackage{algorithm,algorithmic}
 
+\usetheme{Amsterdam}
+\setbeamertemplate{itemize subitem}[triangle]
 \setbeamertemplate{bibliography item}[text]
 \setbeamertemplate{navigation symbols}{}
-\usetheme{Amsterdam}
 
 \usetikzlibrary{calc}
 \tikzstyle{item}=[rectangle,rounded corners=3pt,thick, dashed, color=beamer@blendedred, fill=gray!20]
@@ -23,6 +24,7 @@
 \newcommand{\crm}[1]{\romannumeral #1}
 % Siècle %
 \newcommand{\siecle}[1]{\cRM{#1}\textsuperscript{e}~siècle}
+
 
 \definecolor{keywords}{RGB}{255,0,0}
 \lstset{language=[LaTeX]TeX,
@@ -86,11 +88,11 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 \subsection{Armées}
 
 \begin{frame}{Structure}
-\setbeamertemplate{itemize subitem}[triangle]
+\vspace{5mm}
 \begin{columns}[c]
 	\begin{column}[c]{0.48\linewidth}
 		\begin{centering}
-		\includegraphics[trim=0cm 0cm 0cm 0cm, clip=true, width=0.2\paperwidth]{../ressources/Roman_soldier}
+		\includegraphics[width=\linewidth]{../ressources/armee_cesar}
 		\end{centering}
 	\end{column}
 	\begin{column}[c]{0.48\linewidth}
@@ -101,58 +103,17 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 				\item religieux
 			\end{itemize}
 		\end{itemize}
+		\begin{itemize}
+			\item homogénéité
+			\begin{itemize}
+				\item hiérarchie militaire
+				\item formations
+			\end{itemize}
+		\end{itemize}
 	\end{column}
 \end{columns}
-\begin{itemize}
-	\item homogénéité
-	\begin{itemize}
-		\item hiérarchie militaire
-		\item formations
-	\end{itemize}
-\end{itemize}
-\footlineextra{}
-\end{frame}
 
-\begin{frame}{Contexte}
-\begin{itemize}
-\item armées
-\item organismes d'état
-\item structurées / hiérarchiques
-\item constituées de beaucoup de soldats
-\item conscrits / volontaires / de métier
-\end{itemize}
-\footlineextra{}
-\end{frame}
-
-\begin{frame}{Hiérarchie}
-\makebox[0.99\linewidth]{
-\begin{tikzpicture}[	level 1/.style={sibling distance=60mm}, 
-				level 2/.style={sibling distance=25mm}, 
-				level 3/.style={sibling distance=20mm}]
-	\node [circle,draw] (z){général}
-		child {node [item,draw] (a) {officier}
-			child {node [item,draw] (b) {sous-officier}
-					child {node [item,draw] (d) {militaire}}
-					child {node [item,draw] (e) {militaire}}
-			}
-			child {node [item,draw] (c) {sous-officier}}
-		}
-		child {node [item,draw] (j) {officier}
-			child {node [item,draw] (k) {sous-officier}}
-			child {node [item,draw] (l) {sous-officier}
-				child {node [item,draw] (o) {militaire}}
-				child {node [item,draw] (p) {militaire}}
-			}
-		};
-	\path (a) -- (j)  node [midway] {\ldots};
-	\path (b) -- (l) node [midway] {\ldots};
-	\path (d) -- (p) node [midway] {\ldots};
-\end{tikzpicture}
-}
-\footlineextra{}
-\end{frame}
-
-\begin{frame}{Organisation des unités}
+\bigskip
 \makebox[0.99\linewidth]{
 \resizebox{\paperwidth}{!}{
 \begin{tabular}{| c l | c l | c l | c l |}
@@ -169,23 +130,79 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 	\hline
 \end{tabular}
 }}
-\footlineextra{\cite{mongol_army, spart_army, roman_legion,persian_army}}
+\footlineextra{\cite{mongol_army, spart_army, roman_legion,persian_army,armee_de_cesar}}
+\end{frame}
+
+\begin{frame}{Contexte}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(0.1cm,-1.7cm)$) {
+		\includegraphics[height=0.38\paperheight]{../ressources/dmz-corea}
+	};
+	\node[anchor=south east,inner sep=0pt] at ($(current page.south east)+(-0.1cm,0.45cm)$) {
+		\includegraphics[height=0.38\paperheight]{../ressources/risk-board-game}
+	};
+	\node[anchor=north east,draw,item] at($(current page.north east)+(-1.65cm,-3.2cm)$) {défendre la patrie};
+	\node[anchor=north west,draw,item] (S) at($(current page.north west)+(3.85cm,-7.0cm)$) {conquérir du territoire};
+\end{tikzpicture}
+\footlineextra{\cite{dmz_corea,risk_picture}}
 \end{frame}
 
 
 \subsection{Guérillas}
 
+\begin{frame}{Structure}
+\begin{columns}[c]
+	\begin{column}[c]{0.6\linewidth}
+		\begin{centering}
+		\includegraphics[width=\linewidth]{../ressources/guerrilla_naxalite}
+		\end{centering}
+	\end{column}
+	\begin{column}[c]{0.38\linewidth}
+		\begin{itemize}
+			\item leader
+			\begin{itemize}
+				\item idéologique
+				\item charismatique
+			\end{itemize}
+		\end{itemize}
+		\begin{itemize}
+			\item hétérogénéité
+			\begin{itemize}
+				\item hiérarchie
+				\item micro-formations
+			\end{itemize}
+		\end{itemize}
+	\end{column}
+\end{columns}
+\vfill
+\makebox[0.99\linewidth]{
+\begin{tabular}{| l | c | c | c | c |}
+	\hline
+	\textbf{Localisation}		& \textbf{Irlande} 	& \textbf{Inde} 	& \textbf{Cuba}	& \textbf{Colombie}	\\
+	\hline
+	\textbf{Régime}			& 55.000			& 1.414.000	& 35.000		& 300.000			\\
+	\textbf{Insurgés}		& 15.000			& 15.000		& 200		& 20.000			\\
+	\hline
+\end{tabular}}
+\footlineextra{\cite{guerrilla_naxalite, naxalite_guerrilla_wiki, irish_civil_war_wiki}}
+\end{frame}
+
 \begin{frame}{Contexte}
-\begin{itemize}
-\item leader
-\item asymétrie des forces
-\item mobilité
-\item hit and run tactique
-\item terreur
-\item terrain propice
-\item idéologie et support de la population
-\end{itemize}
-\footlineextra{}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[anchor=north west,inner sep=0pt] at ($(current page.north west)+(0.1cm,-1.7cm)$) {
+	\includegraphics[height=0.4\paperheight]{../ressources/valdepenas}
+	};
+	\node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(3.1cm,1.5cm)$) {
+	\includegraphics[height=0.4\paperheight]{../ressources/guerrilla_colombia}
+	};
+	\node[anchor=south east,inner sep=0pt] at ($(current page.south east)+(-2.1cm,0.45cm)$) {
+	\includegraphics[trim=0cm 1.5cm 0cm 0cm, clip=true, height=0.25\paperheight]{../ressources/rebel_syrie}
+	};
+	\node[anchor=north east,draw,item] at($(current page.north east)+(-0.4cm,-3.0cm)$) {adaptés au terrain};
+	\node[anchor=north east,draw,item] (S) at($(current page.north east)+(-0.4cm,-5.5cm)$) {mobiles};
+	\node[anchor=north east,draw,item] (T) at($(current page.north east)+(-0.4cm,-7.5cm)$) {civils};
+\end{tikzpicture}
+\footlineextra{\cite{valdepenas,guerrilla_colombia,rebel_syrie}}
 \end{frame}
 
 
@@ -547,6 +564,10 @@ sabotage & fortifications\\
 	};
 \end{tikzpicture}
 \footlineextra{\cite{ambush_wiki, uzbin_ambush, ambush_picture}}
+\end{frame}
+
+\begin{frame}{Hit and run}
+\footlineextra{}
 \end{frame}
 
 
