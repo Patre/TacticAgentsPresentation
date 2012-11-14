@@ -1,15 +1,15 @@
 
 \PassOptionsToPackage{table}{xcolor}
-\documentclass[utf8]{beamer}
-
+\documentclass[utf8,hyperref={pagebackref}]{beamer}
+%bookmarks,bookmarksnumbered,colorlinks=false,linktocpage
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{listings}
-\usepackage{multicol}
 \usepackage{fancybox}
 \usepackage{tikz}
 \usepackage{bibentry}
 \usepackage{algorithm,algorithmic}
+
 
 \usetheme{Amsterdam}
 \setbeamertemplate{itemize subitem}[triangle]
@@ -428,7 +428,7 @@ sabotage & fortifications\\
 		\includegraphics[scale=0.217]{../ressources/sabotage_maquisards}
 	};
 \end{tikzpicture}
-\footlineextra{\cite{fort_lupin,war}}
+\footlineextra{\cite{fort_lupin,war,turtle_form,mongol_cavalery,sabotage}}
 \end{frame}
 
 
@@ -714,16 +714,12 @@ sabotage & fortifications\\
 \end{frame}
 
 
-\subsection{Nos contributions}
-\begin{frame}{Une simulation de bataille}
-émotions
-formations
-direct / indirect
-\footlineextra{}
+\section{Conclusion}
+\begin{frame}{Conclusion}
+
 \end{frame}
 
 
-\section{Bibliographie}
 \bibliographystyle{plain}
 %\bibliographystyle{amsalpha}
 \begin{frame}[allowframebreaks]
