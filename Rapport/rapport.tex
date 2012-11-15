@@ -2,13 +2,20 @@
 \PassOptionsToPackage{table}{xcolor}
 \documentclass{article}
 
+\usepackage[francais]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
-\usepackage{listings}
-\usepackage{algorithm,algorithmic}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=red,colorlinks=false} 
+\usepackage{algorithm,algorithmic}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{lscape}
+\usepackage{amsmath}
 \usepackage[margin=2.5cm]{geometry}
 
 
@@ -49,30 +56,23 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 
 
 \section{Organisations guerrières}
+Il y a deux types d'organisations militaires bien différents : les armées et les guérillas. Nous allons présenter pour chaque type sa structure et le contexte dans lequel il existe.
 
 \subsection{Armées}
+Les armées sont des entités qui tirent leur légitimité de leur appartenance aux états ou jadis aux institutions religieuses.
 
 \subsubsection{Structure}
+La structure des armées est homogène : en effet, la hiérarchie est sous forme d'arbre dont les nœuds du même niveau ont le même nombre de fils.
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[width=0.8\linewidth]{../ressources/armee_cesar}
+	\caption{Exemple d'organisation homogène de l'armée (armée de César - Warmaster ancients \cite{armee_de_cesar})}
+	\end{centering}
+\end{figure}
 
+Cela permet de construire des formations à grande échelle qui aient une structure prédéfinie.
+\begin{figure}[H]
 \begin{centering}
-		\includegraphics[width=\linewidth]{../ressources/armee_cesar}
-		\end{centering}
-\begin{itemize}
-			\item leader
-			\begin{itemize}
-				\item politique
-				\item religieux
-			\end{itemize}
-		\end{itemize}
-		\begin{itemize}
-			\item homogénéité
-			\begin{itemize}
-				\item hiérarchie militaire
-				\item formations
-			\end{itemize}
-		\end{itemize}
-
-\makebox[0.99\linewidth]{
 \begin{tabular}{| c l | c l | c l | c l |}
 	\hline
 	\multicolumn{8}{| c |}{\textbf{Armée}}
@@ -86,69 +86,112 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 	 \itshape Énomotie		& 36			& \itshape Centurie		& 100		& \textit{Dathabam} 	& 10			& \textit{Arav} 		& 10				\\
 	\hline
 \end{tabular}
-}
+\caption{Effectif des unités dans différentes armées antiques \cite{mongol_army, spart_army, roman_legion,persian_army}}
+\end{centering}
+\end{figure}
 
-\cite{mongol_army, spart_army, roman_legion,persian_army,armee_de_cesar}
 
 \subsubsection{Contexte}
-\includegraphics[width=\linewidth]{../ressources/dmz-corea}
-\includegraphics[]{../ressources/risk-board-game}
-\cite{dmz_corea,risk_picture}
+Les armées interviennent dans deux contextes principaux : la défense de la patrie et la conquête de nouveaux territoires.
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[width=\linewidth]{../ressources/dmz-corea}
+	\caption{Zone démilitarisée entre la Corée du Sud et la Corée du Nord \cite{dmz_corea}}
+	\end{centering}
+\end{figure}
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[]{../ressources/risk-board-game}
+	\caption{Tentative de conquête dans le jeu Risk \cite{risk_picture}}
+	\end{centering}
+\end{figure}
+
 
 
 
 \subsection{Guérillas}
+Les guérillas se forment à la suite d'une scission idéologique entre le pouvoir en place et une partie de la population. Elles ont souvent à leur tête un leader charismatique.
 
 \subsubsection{Structure}
-\begin{centering}
-		\includegraphics[width=\linewidth]{../ressources/guerrilla_naxalite}
-		\end{centering}
-	\begin{itemize}
-			\item leader
-			\begin{itemize}
-				\item idéologique
-				\item charismatique
-			\end{itemize}
-		\end{itemize}
-		\begin{itemize}
-			\item hétérogénéité
-			\begin{itemize}
-				\item hiérarchie
-				\item micro-formations
-			\end{itemize}
-		\end{itemize}
-	
-\begin{tabular}{| l | c | c | c | c |}
+Ces organisation sont souvent structurées de façon très hétérogène : peu de responsables et des formations à petite échelle.
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[width=\linewidth]{../ressources/guerrilla_naxalite}
+	\caption{Guérilla Naxalite (Inde) \cite{guerrilla_naxalite}}
+	\end{centering}
+\end{figure}
+
+Les guérillas, comme le montre la figure suivante, ont une échelle réduite par rapport aux forces contre lesquelles elles luttent.
+\begin{figure}[H]
+	\begin{centering}
+	\begin{tabular}{| l | c | c | c | c |}
 	\hline
 	\textbf{Localisation}		& \textbf{Irlande} 	& \textbf{Inde} 	& \textbf{Cuba}	& \textbf{Colombie}	\\
 	\hline
 	\textbf{Régime}			& 55.000			& 1.414.000	& 35.000		& 300.000			\\
 	\textbf{Insurgés}		& 15.000			& 15.000		& 200		& 20.000			\\
 	\hline
-\end{tabular}
-\cite{guerrilla_naxalite, naxalite_guerrilla_wiki, irish_civil_war_wiki}
+	\end{tabular}
+	\caption{Effectifs des forces du régime par rapport aux forces des guérillas \cite{naxalite_guerrilla_wiki, irish_civil_war_wiki}}
+	\end{centering}
+\end{figure}
 
 
 \subsubsection{Contexte}
-\includegraphics[width=\linewidth]{../ressources/valdepenas}
-\includegraphics[]{../ressources/guerrilla_colombia}
-\includegraphics[]{../ressources/rebel_syrie}
-\cite{valdepenas,guerrilla_colombia,rebel_syrie}
+Les forces de guérilla sont adaptées au terrain : montagnes, maquis, villes \ldots
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[width=\linewidth]{../ressources/valdepenas}
+	\caption{Soulèvement de Valdepeñas ; guérilla urbaine \cite{valdepenas}}
+	\end{centering}
+\end{figure}
+Elles sont mobiles.
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[]{../ressources/guerrilla_colombia}
+	\caption{Guérilla colombienne \cite{guerrilla_colombia}}
+	\end{centering}
+\end{figure}
+La plupart des recrues sont des civils.
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[]{../ressources/rebel_syrie}
+	\caption{Des rebelles en Syrie \cite{rebel_syrie}}
+	\end{centering}
+\end{figure}
 
 
 \section{Stratégies militaires}
 
 \subsection{Définitions}
-
+Politique \cite{politique_jomini}
 \begin{quote}“La politique de la guerre c’est tout simplement décider où, quand, comment, avec quels alliés et pourquoi entrer en guerre.”\end{quote}
-\begin{quote}“La stratégie militaire est l'art de coordonner -au plus haut niveau de décision- l'action de l'ensemble des forces militaires de la Nation pour conduire une guerre, gérer une crise ou préserver la paix.”\end{quote}
-\begin{quote}“La tactique est l'art de diriger une bataille, en combinant, par la manœuvre, l'action des différents moyens de combat en vue d'obtenir le maximum d'efficacité.”\end{quote}
-\cite{military_strategy, tactic, politique_jomini}
 
-\includegraphics[width=\linewidth]{../ressources/alliances_ww1}
-\includegraphics[width=\linewidth]{../ressources/strategy_ww1}
-\includegraphics[width=\linewidth]{../ressources/Battles_of_Charleroi_ww1}
-\cite{ww1, military_strategy, tactic}
+Stratégie \cite{military_strategy}
+\begin{quote}“La stratégie militaire est l'art de coordonner -au plus haut niveau de décision- l'action de l'ensemble des forces militaires de la Nation pour conduire une guerre, gérer une crise ou préserver la paix.”\end{quote}
+
+Tactique \cite{tactic}
+\begin{quote}“La tactique est l'art de diriger une bataille, en combinant, par la manœuvre, l'action des différents moyens de combat en vue d'obtenir le maximum d'efficacité.”\end{quote}
+
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[width=\linewidth]{../ressources/alliances_ww1}
+	\caption{\cite{ww1}}
+	\end{centering}
+\end{figure}
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[width=\linewidth]{../ressources/strategy_ww1}
+	\caption{\cite{military_strategy}}
+	\end{centering}
+\end{figure}
+\begin{figure}[H]
+	\begin{centering}
+	\includegraphics[width=\linewidth]{../ressources/Battles_of_Charleroi_ww1}
+	\caption{\cite{tactic}}
+	\end{centering}
+\end{figure}
+
 
 
 \subsection{Stratégies}
