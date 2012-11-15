@@ -1,0 +1,404 @@
+
+\PassOptionsToPackage{table}{xcolor}
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+\usepackage{algorithm,algorithmic}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[margin=2.5cm]{geometry}
+
+
+% Romain
+\newcommand{\cRM}[1]{\MakeUppercase{\romannumeral #1}}  % Capital
+\newcommand{\cRm}[1]{\textsc{\romannumeral #1}} % Petit majuscule
+\newcommand{\crm}[1]{\romannumeral #1}
+% Siècle %
+\newcommand{\siecle}[1]{\cRM{#1}\textsuperscript{e}~siècle}
+
+
+\definecolor{keywords}{RGB}{255,0,0}
+\lstset{language=[LaTeX]TeX,
+texcsstyle=*\color{keywords},
+breaklines=true,
+keywordstyle=\color{keywords},
+commentstyle=\color{darkgreen},
+tabsize=2,
+backgroundcolor=\color{lightgrey},
+escapeinside=||,
+morekeywords={*,subsection,make title,tableofcontents,include graphics}
+}
+
+
+\rowcolors{1}{gray!25}{white}
+
+\title{Les stratégies militaires dans les Systèmes Multi-Agents}
+\author{Chloé Desdouits, William Dyce}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+
+\section{Organisations guerrières}
+
+\subsection{Armées}
+
+\subsubsection{Structure}
+
+\begin{centering}
+		\includegraphics[width=\linewidth]{../ressources/armee_cesar}
+		\end{centering}
+\begin{itemize}
+			\item leader
+			\begin{itemize}
+				\item politique
+				\item religieux
+			\end{itemize}
+		\end{itemize}
+		\begin{itemize}
+			\item homogénéité
+			\begin{itemize}
+				\item hiérarchie militaire
+				\item formations
+			\end{itemize}
+		\end{itemize}
+
+\makebox[0.99\linewidth]{
+\begin{tabular}{| c l | c l | c l | c l |}
+	\hline
+	\multicolumn{8}{| c |}{\textbf{Armée}}
+	\\
+	\multicolumn{2}{| c |}{\textbf{Spartiate}} 	& \multicolumn{2}{ c |}{\textbf{Romaine}} & \multicolumn{2}{ c |}{\textbf{Perse}}	& \multicolumn{2}{ c |}{\textbf{Mongole}} 	\\
+	\hline
+	 					&			& 					&			& 				&			& \textit{Ordu}		& > 10000			\\
+	 \itshape Mora 			& 576		& \itshape Légion		& 6000		& \textit{Baivarabam}& 10000		& \textit{Tumen} 	& 10000			\\
+	 \itshape Loche			& 144		& \itshape Cohorte		& 600		& \textit{Hazarabam}	& 1000		& \textit{Minghan}  	& 1000			\\
+	 \itshape Pentécostye	& 72			& \itshape Manipule		& 200		& \textit{satabam}	& 100		& \textit{Zuut} 		& 100			\\
+	 \itshape Énomotie		& 36			& \itshape Centurie		& 100		& \textit{Dathabam} 	& 10			& \textit{Arav} 		& 10				\\
+	\hline
+\end{tabular}
+}
+
+\cite{mongol_army, spart_army, roman_legion,persian_army,armee_de_cesar}
+
+\subsubsection{Contexte}
+\includegraphics[width=\linewidth]{../ressources/dmz-corea}
+\includegraphics[]{../ressources/risk-board-game}
+\cite{dmz_corea,risk_picture}
+
+
+
+\subsection{Guérillas}
+
+\subsubsection{Structure}
+\begin{centering}
+		\includegraphics[width=\linewidth]{../ressources/guerrilla_naxalite}
+		\end{centering}
+	\begin{itemize}
+			\item leader
+			\begin{itemize}
+				\item idéologique
+				\item charismatique
+			\end{itemize}
+		\end{itemize}
+		\begin{itemize}
+			\item hétérogénéité
+			\begin{itemize}
+				\item hiérarchie
+				\item micro-formations
+			\end{itemize}
+		\end{itemize}
+	
+\begin{tabular}{| l | c | c | c | c |}
+	\hline
+	\textbf{Localisation}		& \textbf{Irlande} 	& \textbf{Inde} 	& \textbf{Cuba}	& \textbf{Colombie}	\\
+	\hline
+	\textbf{Régime}			& 55.000			& 1.414.000	& 35.000		& 300.000			\\
+	\textbf{Insurgés}		& 15.000			& 15.000		& 200		& 20.000			\\
+	\hline
+\end{tabular}
+\cite{guerrilla_naxalite, naxalite_guerrilla_wiki, irish_civil_war_wiki}
+
+
+\subsubsection{Contexte}
+\includegraphics[width=\linewidth]{../ressources/valdepenas}
+\includegraphics[]{../ressources/guerrilla_colombia}
+\includegraphics[]{../ressources/rebel_syrie}
+\cite{valdepenas,guerrilla_colombia,rebel_syrie}
+
+
+\section{Stratégies militaires}
+
+\subsection{Définitions}
+
+\begin{quote}“La politique de la guerre c’est tout simplement décider où, quand, comment, avec quels alliés et pourquoi entrer en guerre.”\end{quote}
+\begin{quote}“La stratégie militaire est l'art de coordonner -au plus haut niveau de décision- l'action de l'ensemble des forces militaires de la Nation pour conduire une guerre, gérer une crise ou préserver la paix.”\end{quote}
+\begin{quote}“La tactique est l'art de diriger une bataille, en combinant, par la manœuvre, l'action des différents moyens de combat en vue d'obtenir le maximum d'efficacité.”\end{quote}
+\cite{military_strategy, tactic, politique_jomini}
+
+\includegraphics[width=\linewidth]{../ressources/alliances_ww1}
+\includegraphics[width=\linewidth]{../ressources/strategy_ww1}
+\includegraphics[width=\linewidth]{../ressources/Battles_of_Charleroi_ww1}
+\cite{ww1, military_strategy, tactic}
+
+
+\subsection{Stratégies}
+
+\subsubsection{Sun Tzu}
+Chine (\siecle{6} BC)
+\includegraphics[]{../ressources/sun_tzu_general}
+\begin{quote}“L'art de la guerre, c'est de soumettre l'ennemi sans combat.”\end{quote}
+
+Préceptes
+\begin{itemize}
+\item prendre toutes les possessions de l'adversaire et les conserver intactes
+\item adaptabilité, préparation, connaissance du terrain et des forces en présence (espionnage)
+\end{itemize}
+Axes stratégiques
+\begin{enumerate}
+\item cause morale
+\item conditions climatiques
+\item conditions géographiques
+\item qualités du dirigeant
+\item organisation et discipline
+\end{enumerate}
+
+\cite{tzu1997art, sun_tzu_fighting, sun_tzu_wiki}
+
+\subsubsection{Alexandre le grand}
+Grèce (\siecle{4} BC)
+\includegraphics[trim=0cm 8cm 0cm 0cm, clip=true, width=1.9cm]{../ressources/AlexanderTheGreat_Bust}
+\begin{quote}“Ce qui ne me tue pas me rend plus fort.”\end{quote}
+
+Préceptes
+\begin{itemize}
+\item conscription et intégration des peuples vaincus
+\item allègement de l'équipement des troupes
+\end{itemize}
+Axes stratégiques
+\begin{enumerate}
+\item assurer ses arrières
+\item choisir judicieusement la voie d'accès pour chaque conquête
+\end{enumerate}
+\cite{alexander_the_great, alexandre_balkans}
+
+\subsubsection{Julius Caesar}
+Italie (\siecle{1} BC)
+\includegraphics[trim=0cm 20cm 0cm 0cm, clip=true, width=1.9cm]{../ressources/cesare}
+\begin{quote}“L’expérience, voilà le maître en toutes choses.”\end{quote}
+
+Préceptes
+\begin{itemize}
+\item stabilité militaire et logistique
+\end{itemize}
+Axes stratégiques
+\begin{enumerate}
+\item infanterie lourde
+\item bataillons étrangers spécialisés
+\item formations en fonction des conditions géographiques
+\item bivouac fortifié
+\end{enumerate}
+\cite{caesar_wiki, caesar_lacks}
+
+\subsubsection{Genghis Khan}
+Mongolie (\siecle{12})
+\includegraphics[trim=0cm 1cm 0cm 1cm, clip=true, width=1.9cm]{../ressources/genghis_khan}
+\begin{quote}“Le plus grand bonheur du Mongol est de vaincre l’ennemi, de ravir ses trésors, de faire hurler ses serviteurs, de se sauver au galop de ses chevaux bien nourris [\ldots]”\end{quote}
+
+Préceptes
+\begin{itemize}
+\item guerre psychologique
+\item règne de la terreur
+\item connaissance du terrain : espionnage ; éclaireurs
+\end{itemize}
+Axes stratégiques
+\begin{enumerate}
+\item peu de troupes ; avant-garde forte
+\item troupes montées % logistique et vitesse
+\item délégation des décisions
+\item relais de communication et ravitaillement
+\item attaques biologiques
+\end{enumerate}
+\cite{khan_wiki, military_strategy, mongol_army}
+
+\subsubsection{Napoléon Bonaparte}
+France (\siecle{18})
+\includegraphics[trim=0cm 2cm 0cm 0cm, clip=true, width=1.9cm]{../ressources/napoleon}
+\begin{quote}“Réunir ses feux contre un seul point ; une fois la brèche faite, l’équilibre est rompu, tout le reste devient inutile.”\end{quote}
+Préceptes
+\begin{itemize}
+\item recherche systématique de la bataille
+\item destruction totale des forces adverses
+\item être le plus fort à l’endroit où l’on a décidé de frapper le coup décisif
+\end{itemize}
+Axes stratégiques
+\begin{enumerate}
+\item vitesse de manœuvre : {\emph Blitzkrieg}
+\item fortifications
+\item lignes de réapprovisionnement provisoires
+\item artillerie
+\end{enumerate}
+\cite{napoleon, napoleon_wiki, napoleon_portrait}
+
+
+\begin{tabular}{|p{0.45\linewidth}|p{0.45\linewidth}|}
+\hline
+\emph{Stratégie indirecte} & \emph{Stratégie directe}\\
+\hline
+renseignement & conscription\\
+embuscade & recherche de la bataille décisive\\
+tromperie & planification et formations\\
+sabotage & fortifications\\
+\hline
+\end{tabular}
+
+\includegraphics[]{../ressources/Vauban_Fort_Lupin}
+\includegraphics[width=\linewidth]{../ressources/tortue}
+\includegraphics[width=\linewidth]{../ressources/mongol_army}
+\includegraphics[width=\linewidth]{../ressources/sabotage_maquisards}
+\cite{fort_lupin,war,turtle_form,mongol_cavalery,sabotage}
+
+
+\subsection{Formations et unités}
+
+\subsubsection{Infanterie}
+\includegraphics[trim=0cm 0cm 0cm 15cm, clip=true, width=0.42\paperwidth]{../ressources/Roman_soldier}
+\includegraphics[width=0.55\paperwidth]{../ressources/JGDSF_Soldiers}
+\cite{infantery}
+
+\subsubsection{Cavalerie légère}
+\includegraphics[width=0.5\paperwidth]{../ressources/IlkhanidHorseArcher}
+\includegraphics[width=0.47\paperwidth]{../ressources/MongolCavalrymen}
+\cite{archery,mongol_army}
+
+\subsubsection{Cavalerie lourde}
+\includegraphics[width=0.44\paperwidth]{../ressources/Ottoman_Mamluk_horseman}
+\includegraphics[width=0.5\paperwidth]{../ressources/cuirassiers}
+\cite{heavy_cavalry}
+
+\subsubsection{Formation en triple ligne}
+\includegraphics[scale=0.4]{../ressources/Polybian_formation}
+\includegraphics[scale=0.5]{../ressources/Formations_infanterie_romaine}
+\cite{roman_infantry_tactics}
+
+
+\subsection{Tactiques}
+
+\subsubsection{Charge}
+\includegraphics[width=\linewidth]{../ressources/Charge-de-cavalerie}
+\includegraphics[width=\linewidth]{../ressources/charge_infanterie}
+\cite{charge_tactic, charge_cavalery}
+
+\subsubsection{Manœuvre de flanquement}
+\includegraphics[width=\linewidth]{../ressources/Battle_of_Marathon}
+\includegraphics[width=\linewidth]{../ressources/Battle_of_Mohi}
+\cite{tactic, flanking_maneuver, pincer_tactic}
+
+\subsubsection{Le marteau et l'enclume}
+\includegraphics[width=\linewidth]{../ressources/marteau}
+\includegraphics[width=\linewidth]{../ressources/marteau2}
+\includegraphics[width=\linewidth]{../ressources/enclume}
+\includegraphics[width=\linewidth]{../ressources/enclume2}
+\cite{Alexanders_tactics}
+
+\subsubsection{Contre-attaque}
+\includegraphics[width=\linewidth]{../ressources/Cedar_Creek_Confederate_attacks}
+\includegraphics[width=\linewidth]{../ressources/Cedar_Creek_Union_counterattack}
+\cite{counterattack_wiki, couterattack_cedar_creek}
+
+\subsubsection{Retraite feinte}
+\includegraphics[width=\linewidth]{../ressources/infantrysquare3}
+\cite{mongol_army,feigned_retreat}
+
+
+\subsubsection{Embuscade}
+\includegraphics[width=\linewidth]{../ressources/Uzbin_valley_ambush-map}
+\includegraphics[width=\linewidth]{../ressources/ambush}
+\cite{ambush_wiki, uzbin_ambush, ambush_picture}
+
+\subsubsection{Hit and run}
+
+
+
+
+\section{Applications aux systèmes multi-agents}
+
+\subsection{État de l'art}
+
+\subsubsection{Enhanced Isaac Neural Simulation Toolkit (EINSTein)}
+an Artificial-Life Laboratory for Exploring Self-Organized Emergence in Land Combat
+Andy Ilachinski
+\includegraphics[]{../ressources/ilachinski}
+1999
+\includegraphics[width=\linewidth]{../ressources/Einstein}
+\cite{simu_guerre,ilachinski1994,ilachinski1999}
+
+motivation des agents
+\includegraphics[]{../ressources/einstein_personality_weight}
+\includegraphics[]{../ressources/einstein_personality_factor}
+
+émergence d'un comportement global
+\includegraphics[]{../ressources/einstein_global_behavior}
+formation en pointe
+encerclement
+assault frontal
+prise en tenaille
+guérilla
+
+\subsubsection{Iruba}
+An Agent-Based Model of the Guerrilla War Process
+Jim Doran
+\includegraphics[]{../ressources/doran}
+2005
+\includegraphics[]{../ressources/insurgency}
+\begin{algorithmic}[1]
+		\WHILE{non termination}
+			\STATE Attacks and their impact
+			\STATE HQ decisions
+			\STATE Recruitment
+			\STATE Force movement
+		\ENDWHILE
+		\end{algorithmic}
+\cite{doran2005iruba}
+
+Stratégies influant sur la réussite
+initial guerrilla band size
+regime force concentration
+insurgent mobility
+insurgent hyper-mobility
+all-out regime counter attack
+
+Stratégies influant sur la réussite
+\includegraphics[scale=0.5]{../ressources/iruba_counter_attack}
+\includegraphics[scale=0.5]{../ressources/iruba_force_concentration}
+\includegraphics[scale=0.5]{../ressources/iruba_hyper_mobility}
+\includegraphics[scale=0.5]{../ressources/iruba_mobility}
+
+\subsubsection{RPDAgent}
+Enhanced Military Decision Modeling Using a MultiAgent System Approach
+John A. Sokolowski
+\includegraphics[scale=0.5]{../ressources/john_sokolowski}
+2003
+\includegraphics[height=0.7\paperheight]{../ressources/RPDagent_uml}
+\cite{sokolowski2003}
+
+
+\section{Conclusion}
+
+
+
+\bibliographystyle{plain}
+\bibliography{../Bib.bib}
+
+\end{document}
+
+
