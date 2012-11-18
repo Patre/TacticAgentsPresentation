@@ -586,21 +586,39 @@ Avec cet architecture simple et un peu d'apprentissage automatique par algorithm
 
 \subsection{Iruba}
 
-\begin{wrapfigure}{r}{0.3\textwidth}
-  \begin{center}
-	\includegraphics[width=0.2\textwidth]{../ressources/doran}
+
+\begin{center}
+\begin{figure}[H]
+\hfill
+\begin{minipage}[H]{0.2\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{../ressources/doran}
 	\caption{Jim Doran}
-  \end{center}
-\end{wrapfigure}
-
-An Agent-Based Model of the Guerrilla War Process 2005.
-
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.7\linewidth}
+La simulation Iruba fut conçu en 2005 par Jim Doran pour mettre à l'épreuve un certain nombre d'hypothèses émises vis-à-vis de la guerre Guerrilla. Notamment il a met en doûte les assertions du Foquisme de Che Guevera, qui suggère qu'un petit nombre d'hommes avec le support du peuple parviendra à ses fins.
+Le \og{}wargame\fg{} se joue sur une grille de territoires, chacun pouvant soutenir plus ou moins les rebelles ce qui rendra plus ou moins difficile defense et recrutement chez les deux camps.
+\end{minipage}
+\hfill
+\end{figure}
+\end{center}
 
 \begin{figure}[H]
 	\begin{centering}
 	\includegraphics[width=\linewidth]{../ressources/insurgency}
 	\end{centering}
+	\caption{Trace du déroulement d'un \og{}jeu\fg{} d'Iruba}
 \end{figure}
+
+\begin{center}
+\begin{figure}[H]
+\hfill
+\begin{minipage}[H]{0.6\linewidth}
+La simulation montre surtout l'importance de la taille initiale de la rébellion, une ammorce que conduira à une boucle de rétroaction favorable pour les rebelles. Pour cette raison le gouvernement aura plus de chance à mettre à fuite les insurgents si sa réponse brise rapidement et conclusivement cette boucle. Parmi les résultats on note aussi l'importance de la concentration des forces gouvernementales (importante pour elles), et de la mobilité des guerillas (favorable seulement si elle reste moderée).
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.3\linewidth}
 \begin{algorithmic}[1]
 		\WHILE{non termination}
 			\STATE Attacks and their impact
@@ -610,14 +628,10 @@ An Agent-Based Model of the Guerrilla War Process 2005.
 		\ENDWHILE
 		\end{algorithmic}
 \cite{doran2005iruba}
-
-Stratégies influant sur la réussite
-initial guerrilla band size
-regime force concentration
-insurgent mobility
-insurgent hyper-mobility
-all-out regime counter attack
-
+\end{minipage}
+\hfill
+\end{figure}
+\end{center}
 \begin{center}
 \begin{figure}[H]
 \begin{minipage}[H]{0.4\linewidth}
@@ -640,7 +654,7 @@ all-out regime counter attack
 	\centering
 	\includegraphics[width=\linewidth]{../ressources/iruba_mobility}
 \end{minipage}
-\caption{Stratégies influant sur la réussite des agents Iruba}
+\caption{Stratégies influant sur la réussite des agents Iruba (RFC~: concentration des forces du régime)}
 \end{figure}
 \end{center}
 
