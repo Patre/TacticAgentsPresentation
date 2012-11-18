@@ -16,6 +16,7 @@
 \usepackage{listings}
 \usepackage{lscape}
 \usepackage{amsmath}
+\usepackage{wrapfig}
 \usepackage[margin=2.5cm]{geometry}
 
 
@@ -88,10 +89,8 @@ Cela permet de construire des formations à grande échelle qui aient une struct
 	\hline
 \end{tabular}
 \caption{Effectif des unités dans différentes armées antiques \cite{mongol_army, spart_army, roman_legion,persian_army}}
-\label{tab_army}
 \end{centering}
 \end{figure}
-Comme nous pouvons l'observer sur la figure \ref{tab_army}, les différentes armées sont très hiérarchiques avec souvent quatre niveaux principaux de commandement.
 
 
 \subsubsection{Contexte}
@@ -104,7 +103,7 @@ Les armées interviennent dans deux contextes principaux : la défense de la pat
 \end{figure}
 \begin{figure}[H]
 	\begin{centering}
-	\includegraphics[scale=0.8]{../ressources/risk-board-game}
+	\includegraphics[]{../ressources/risk-board-game}
 	\caption{Tentative de conquête dans le jeu Risk \cite{risk_picture}}
 	\end{centering}
 \end{figure}
@@ -124,7 +123,7 @@ Ces organisation sont souvent structurées de façon très hétérogène : peu d
 	\end{centering}
 \end{figure}
 
-Les guérillas, comme le montre la figure \ref{tab_guerrilla}, ont une échelle réduite par rapport aux forces contre lesquelles elles luttent.
+Les guérillas, comme le montre la figure suivante, ont une échelle réduite par rapport aux forces contre lesquelles elles luttent.
 \begin{figure}[H]
 	\begin{centering}
 	\begin{tabular}{| l | c | c | c | c |}
@@ -136,13 +135,12 @@ Les guérillas, comme le montre la figure \ref{tab_guerrilla}, ont une échelle 
 	\hline
 	\end{tabular}
 	\caption{Effectifs des forces du régime par rapport aux forces des guérillas \cite{naxalite_guerrilla_wiki, irish_civil_war_wiki}}
-	\label{tab_guerrilla}
 	\end{centering}
 \end{figure}
 
 
 \subsubsection{Contexte}
-Les guérilla se forment dans des contextes de guerre civile afin de renverser le pouvoir en place. Les forces de guérilla sont adaptées au terrain : montagnes, maquis, villes \ldots
+Les forces de guérilla sont adaptées au terrain : montagnes, maquis, villes \ldots
 \begin{figure}[H]
 	\begin{centering}
 	\includegraphics[width=\linewidth]{../ressources/valdepenas}
@@ -172,7 +170,7 @@ Politique \cite{politique_jomini}
 \begin{quote}“La politique de la guerre c’est tout simplement décider où, quand, comment, avec quels alliés et pourquoi entrer en guerre.”\end{quote}
 \begin{figure}[H]
 	\begin{centering}
-	\includegraphics[width=0.95\linewidth]{../ressources/alliances_ww1}
+	\includegraphics[width=\linewidth]{../ressources/alliances_ww1}
 	\caption{Alliances militaires en Europe 1914-1918 \cite{ww1}}
 	\end{centering}
 \end{figure}
@@ -200,17 +198,17 @@ Tactique \cite{tactic}
 \subsection{Stratégies}
 
 \subsubsection{Sun Tzu}
-Sun Tzu était un général chinois du \siecle{6} BC \cite{sun_tzu_wiki} dont la stratégie se résumait pas la citation suivante : \begin{quote}“L'art de la guerre, c'est de soumettre l'ennemi sans combat.”\end{quote}
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[width=5cm]{../ressources/sun_tzu_general}
-	\caption{Sun Tzu \cite{sun_tzu_fighting}}
-	\end{centering}
-\end{figure}
+Chine (\siecle{6} BC) \hfill \begin{minipage}{5cm}
+\includegraphics[width=\linewidth]{../ressources/sun_tzu_general}
+\end{minipage}
+\begin{quote}“L'art de la guerre, c'est de soumettre l'ennemi sans combat.”\end{quote}
 
-Son ouvrage \emph{L'art de la guerre} \cite{tzu1997art} a traversé les siècles et nous inculque les préceptes suivants. L'art de la guerre se résume en deux concepts de base : prendre toutes les possessions de l'adversaire et les conserver intactes afin de s'en trouver renforcé ; engager des forces anodines pour faciliter la victoire par l'adaptabilité, la préparation, la connaissance du terrain et des forces en présence (espionnage).
-
-Les cinq éléments suivants sont à prendre en compte pour élaborer une stratégie :
+Préceptes
+\begin{itemize}
+\item prendre toutes les possessions de l'adversaire et les conserver intactes
+\item adaptabilité, préparation, connaissance du terrain et des forces en présence (espionnage)
+\end{itemize}
+Axes stratégiques
 \begin{enumerate}
 \item cause morale
 \item conditions climatiques
@@ -219,87 +217,93 @@ Les cinq éléments suivants sont à prendre en compte pour élaborer une strat�
 \item organisation et discipline
 \end{enumerate}
 
-
+\cite{tzu1997art, sun_tzu_fighting, sun_tzu_wiki}
 
 \subsubsection{Alexandre le grand}
-Alexandre le grand était un roi de Macédoine (Grèce) vivant au \siecle{4} BC. Nous avons souhaité illustrer sa stratégie par cette citation : \begin{quote}“Ce qui ne me tue pas me rend plus fort.”\end{quote}
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[width=5cm]{../ressources/AlexanderTheGreat_Bust}
-	\caption{Alexandre le grand \cite{alexander_the_great}}
-	\end{centering}
-\end{figure}
+Grèce (\siecle{4} BC)
+\hfill \begin{minipage}{5cm}
+\includegraphics[width=\linewidth]{../ressources/AlexanderTheGreat_Bust}
+\end{minipage}
+\begin{quote}“Ce qui ne me tue pas me rend plus fort.”\end{quote}
 
-Les principes fondateurs de sa stratégie sont la conscription et l'intégration des peuples vaincus et l'allègement de l'équipement des troupes.
-
-Lors de l'élaboration d'une stratégie, nous pouvons retenir d'Alexandre le grand les axes suivants \cite{alexandre_balkans} :
+Préceptes
+\begin{itemize}
+\item conscription et intégration des peuples vaincus
+\item allègement de l'équipement des troupes
+\end{itemize}
+Axes stratégiques
 \begin{enumerate}
 \item assurer ses arrières
 \item choisir judicieusement la voie d'accès pour chaque conquête
 \end{enumerate}
-
+\cite{alexander_the_great, alexandre_balkans}
 
 \subsubsection{Julius Caesar}
-Julius Caesar était un général, homme politique et écrivain romain (Italie) vivant au \siecle{1} BC. Sa stratégie est illustrée par la citation suivante : \begin{quote}“L’expérience, voilà le maître en toutes choses.”\end{quote}
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[width=5cm]{../ressources/cesare}
-	\caption{Julius Caesar \cite{caesar_wiki}}
-	\end{centering}
-\end{figure}
+Italie (\siecle{1} BC)
+\hfill \begin{minipage}{5cm}
+\includegraphics[width=\linewidth]{../ressources/cesare}
+\end{minipage}
+\begin{quote}“L’expérience, voilà le maître en toutes choses.”\end{quote}
 
-Sa stratégie reposait avant tout sur la stabilité militaire et logistique. Il nous a enseigné l'importance des axes stratégiques suivants \cite{caesar_lacks} :
+Préceptes
+\begin{itemize}
+\item stabilité militaire et logistique
+\end{itemize}
+Axes stratégiques
 \begin{enumerate}
-\item l'utilisation de l'infanterie lourde
-\item les bataillons étrangers spécialisés
-\item le choix judicieux des formations en fonction des conditions géographiques
-\item la construction de bivouacs fortifiés
+\item infanterie lourde
+\item bataillons étrangers spécialisés
+\item formations en fonction des conditions géographiques
+\item bivouac fortifié
 \end{enumerate}
-
+\cite{caesar_wiki, caesar_lacks}
 
 \subsubsection{Genghis Khan}
-De son premier nom Temüdjin, fondateur de l'empire Mongol au \siecle{12}.
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[width=5cm]{../ressources/genghis_khan}
-	\caption{Genghis Khan \cite{khan_wiki}}
-	\end{centering}
-\end{figure}
-La meilleure arme de l'armée mongole était la terreur et Genghis Khan l'illustre de la manière suivante : \begin{quote}“Le plus grand bonheur du Mongol est de vaincre l’ennemi, de ravir ses trésors, de faire hurler ses serviteurs, de se sauver au galop de ses chevaux bien nourris [\ldots]”\end{quote}
-Les mongoles étaient un peuple nomade organisé en tribus qui fut réuni par Genghis Khan. Ses principales armes furent la guerre psychologique, le règne de la terreur et la connaissance du terrain à travers l'espionnage et un grande quantité d'éclaireurs \cite{military_strategy}.
+Mongolie (\siecle{12})
+\hfill \begin{minipage}{5cm}
+\includegraphics[width=\linewidth]{../ressources/genghis_khan}
+\end{minipage}
+\begin{quote}“Le plus grand bonheur du Mongol est de vaincre l’ennemi, de ravir ses trésors, de faire hurler ses serviteurs, de se sauver au galop de ses chevaux bien nourris [\ldots]”\end{quote}
 
-Nous pouvons résumer les grandes lignes de sa stratégie de la manière suivante \cite{mongol_army} :
+Préceptes
+\begin{itemize}
+\item guerre psychologique
+\item règne de la terreur
+\item connaissance du terrain : espionnage ; éclaireurs
+\end{itemize}
+Axes stratégiques
 \begin{enumerate}
-\item peu de troupes et une avant-garde forte
-\item des troupes montées rapides qui pouvaient manger leurs chevaux en cas de besoin
-\item la délégation des décisions à ses seconds
-\item de nombreux (et bien placés) relais de communication et de ravitaillement
-\item attaques biologiques (catapultes lançant les corps en décomposition des ennemis)
+\item peu de troupes ; avant-garde forte
+\item troupes montées % logistique et vitesse
+\item délégation des décisions
+\item relais de communication et ravitaillement
+\item attaques biologiques
 \end{enumerate}
-
+\cite{khan_wiki, military_strategy, mongol_army}
 
 \subsubsection{Napoléon Bonaparte}
-Napoléon Bonaparte était le premier empereur des Français au \siecle{18}. Il fut le général français le plus expansionniste. Sa stratégie était basée sur le fait de percer la défense adverse le plus rapidement possible, ainsi disait-il : \begin{quote}“Réunir ses feux contre un seul point ; une fois la brèche faite, l’équilibre est rompu, tout le reste devient inutile.”\end{quote}
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[width=5cm]{../ressources/napoleon}
-	\caption{Napoléon Bonaparte \cite{napoleon_portrait}}
-	\end{centering}
-\end{figure}
-
-Les principes fondateurs selon lui sont : la recherche systématique de la bataille et la destruction totale des forces adverses ; ainsi on peut être le plus fort à l’endroit où l’on a décidé de frapper le coup décisif \cite{napoleon_wiki}.
-
-Les principaux axes stratégiques \cite{napoleon} que l'on peut retenir sont :
+France (\siecle{18})
+\hfill \begin{minipage}{5cm}
+\includegraphics[width=\linewidth]{../ressources/napoleon}
+\end{minipage}
+\begin{quote}“Réunir ses feux contre un seul point ; une fois la brèche faite, l’équilibre est rompu, tout le reste devient inutile.”\end{quote}
+Préceptes
+\begin{itemize}
+\item recherche systématique de la bataille
+\item destruction totale des forces adverses
+\item être le plus fort à l’endroit où l’on a décidé de frapper le coup décisif
+\end{itemize}
+Axes stratégiques
 \begin{enumerate}
-\item vitesse de manœuvre : \emph{Blitzkrieg}
+\item vitesse de manœuvre : {\emph Blitzkrieg}
 \item fortifications
 \item lignes de réapprovisionnement provisoires
 \item artillerie
 \end{enumerate}
+\cite{napoleon, napoleon_wiki, napoleon_portrait}
 
 
 \subsubsection{Conclusion}
-Si l'on essaie d'analyser les stratégies examinées précédemment, nous pouvons les regrouper en deux types : stratégies directes et stratégies indirectes.
 
 \begin{tabular}{|p{0.45\linewidth}|p{0.45\linewidth}|}
 \hline
@@ -511,8 +515,10 @@ sabotage & fortifications\\
 %https://hmi.ewi.utwente.nl/~hmiproj6/AL/mors.pdf
 %http://en.wikipedia.org/wiki/Braitenberg_vehicle
 %http://en.wikipedia.org/wiki/Lanchester's_laws
+%http://www2.dcs.hull.ac.uk/NEAT/dnd/AI/AndyIlachinski_BriefingSlides.pdf
 
-\textbf{EINSTein}\footnote{\underline{E}nhanced \underline{I}SAAC \underline{N}eural \underline{S}imulation \underline{T}oolkit} se présente comme "laboratoire" de vie artificielle, fut conçu en 1999 dans le but d'explorer l'auto-orgnisation et l'emmergence dans le combat terrestre. 
+\subsubsection{Origines}
+\textbf{EINSTein} (\underline{E}nhanced \underline{I}SAAC \underline{N}eural \underline{S}imulation \underline{T}oolkit), conçu sous Andy Ilachinksi en 1999, se présente comme "laboratoire" de vie artificielle, fut implémenté dans le but de faciliter l'exploration de l'auto-orgnisation et l'emmergence dans le combat terrestre. 
 
 \begin{center}
 \begin{figure}[H]
@@ -536,7 +542,9 @@ sabotage & fortifications\\
 \end{figure}
 \end{center}
 
-Il se base sur \textbf{ISAAC}\footnote{\underline{I}rreducible \underline{S}emi-\underline{A}utonomus \underline{A}daptive \underline{C}ombat}~: modèle crée par opposition à la vision réductioniste et par le haut des Lois de Lanchester, formules utilisés couramment pour modéliser l'attrition depuis 1916. ISAAC se base d'ailleurs lui-même sur les \og{}Vehicles\fg{} de Valentino Braitenberg, agents munis de senseurs et possèdant des effecteurs leur permettant de se déplacer dans leur environnement. Si les Vehicles apportent la notion de \emph{multum in parvo} et ISAAC applique cette vision synthesiste et par le bas à la modélisation du combat terrestre, EINSTein étend, ameliore et concrétise sa preuve de concept, et l'encapsule dans une boite à outils pour développeurs.
+Il se base sur \textbf{ISAAC}(\underline{I}rreducible \underline{S}emi-\underline{A}utonomus \underline{A}daptive \underline{C}ombat)~: modèle crée par opposition à la vision réductioniste et par le haut des Lois de Lanchester, formules utilisés couramment pour modéliser l'attrition depuis 1916. ISAAC se base d'ailleurs lui-même sur les \og{}Vehicles\fg{} de Valentino Braitenberg, agents munis de senseurs et possèdant des effecteurs leur permettant de se déplacer dans leur environnement. Si les Vehicles apportent la notion de \emph{multum in parvo} et ISAAC applique cette vision synthesiste et par le bas à la modélisation du combat terrestre, EINSTein étend, ameliore et concrétise sa preuve de concept, et l'encapsule dans une boite à outils pour développeurs.
+
+\subsubsection{Fonctionnement}
 
 \begin{center}
 \begin{figure}[H]
@@ -578,18 +586,20 @@ En plus de sa personalité, un ensemble de \og{}meta-règles\fg{} influencent se
 Avec cet architecture simple et un peu d'apprentissage automatique par algorithmes génétiques, nous arrivons à des tactiques intéressantes tels formations en pointe, encerclement, prises en ténaille, attaques guérilla,~\dots
 
 \subsection{Iruba}
-An Agent-Based Model of the Guerrilla War Process
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[]{../ressources/doran}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+  \begin{center}
+	\includegraphics[width=0.2\textwidth]{../ressources/doran}
 	\caption{Jim Doran}
-	\end{centering}
-\end{figure}
-2005
+  \end{center}
+\end{wrapfigure}
+
+An Agent-Based Model of the Guerrilla War Process 2005.
+
+
 \begin{figure}[H]
 	\begin{centering}
 	\includegraphics[width=\linewidth]{../ressources/insurgency}
-	\caption{}
 	\end{centering}
 \end{figure}
 \begin{algorithmic}[1]
@@ -609,40 +619,44 @@ insurgent mobility
 insurgent hyper-mobility
 all-out regime counter attack
 
-Stratégies influant sur la réussite
+\begin{center}
 \begin{figure}[H]
-	\begin{centering}
-	\includegraphics[scale=0.9]{../ressources/iruba_counter_attack}
-	\caption{}
-	\end{centering}
+\begin{minipage}[H]{0.4\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../ressources/iruba_counter_attack}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.4\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../ressources/iruba_force_concentration}
+\end{minipage}
 \end{figure}
 \begin{figure}[H]
-	\begin{centering}
-	\includegraphics[scale=0.9]{../ressources/iruba_force_concentration}
-	\caption{}
-	\end{centering}
+\begin{minipage}[H]{0.4\linewidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{../ressources/iruba_hyper_mobility}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.4\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../ressources/iruba_mobility}
+\end{minipage}
+\caption{Stratégies influant sur la réussite des agents Iruba}
 \end{figure}
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[scale=0.9]{../ressources/iruba_hyper_mobility}
-	\caption{}
-	\end{centering}
-\end{figure}
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[scale=0.9]{../ressources/iruba_mobility}
-	\caption{}
-	\end{centering}
-\end{figure}
+\end{center}
 
 \subsection{RPDAgent}
 Enhanced Military Decision Modeling Using a MultiAgent System Approach
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[scale=0.5]{../ressources/john_sokolowski}
-	\caption{John A. Sokolowski}
-	\end{centering}
-\end{figure}
+
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{../ressources/john_sokolowski}
+    \caption{John A. Sokolowski}
+  \end{center}
+\end{wrapfigure}
+
+
 2003
 \begin{figure}[H]
 	\begin{centering}
