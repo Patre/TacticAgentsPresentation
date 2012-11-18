@@ -49,6 +49,7 @@ morekeywords={*,subsection,make title,tableofcontents,include graphics}
 
 \begin{document}
 
+
 \maketitle
 
 \tableofcontents
@@ -509,48 +510,75 @@ sabotage & fortifications\\
 \section{Applications aux systèmes multi-agents}
 
 \subsection{Enhanced Isaac Neural Simulation Toolkit (EINSTein)}
-an Artificial-Life Laboratory for Exploring Self-Organized Emergence in Land Combat
+%http://wwwhome.ewi.utwente.nl/~hmiproj6/AL/isaac_einstein_paper.pdf
+%https://hmi.ewi.utwente.nl/~hmiproj6/AL/mors.pdf
+%http://en.wikipedia.org/wiki/Braitenberg_vehicle
+%http://en.wikipedia.org/wiki/Lanchester's_laws
+
+\textbf{EINSTein}\footnote{\underline{E}nhanced \underline{I}SAAC \underline{N}eural \underline{S}imulation \underline{T}oolkit} se présente comme "laboratoire" de vie artificielle, fut conçu en 1999 dans le but d'explorer l'auto-orgnisation et l'emmergence dans le combat terrestre. 
+
+\begin{center}
 \begin{figure}[H]
-	\begin{centering}
-	\includegraphics[]{../ressources/ilachinski}
+\begin{minipage}[H]{0.25\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{../ressources/lanchester}
+	\caption{Frederick W. Lanchester}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.25\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{../ressources/valentin_braitenberg}
+	\caption{Valentin Braintenberg}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.25\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{../ressources/ilachinski}
 	\caption{Andy Ilachinski}
-	\end{centering}
+\end{minipage}
 \end{figure}
-1999
+\end{center}
+
+Il se base sur \textbf{ISAAC}\footnote{\underline{I}rreducible \underline{S}emi-\underline{A}utonomus \underline{A}daptive \underline{C}ombat}~: modèle crée par opposition à la vision réductioniste et par le haut des Lois de Lanchester, formules utilisés couramment pour modéliser l'attrition depuis 1916. ISAAC se base d'ailleurs lui-même sur les \og{}Vehicles\fg{} de Valentino Braitenberg, agents munis de senseurs et possèdant des effecteurs leur permettant de se déplacer dans leur environnement. Si les Vehicles apportent la notion de \emph{multum in parvo} et ISAAC applique cette vision synthesiste et par le bas à la modélisation du combat terrestre, EINSTein étend, ameliore et concrétise sa preuve de concept, et l'encapsule dans une boite à outils pour développeurs.
+
+\begin{center}
 \begin{figure}[H]
 	\begin{centering}
-	\includegraphics[width=\linewidth]{../ressources/Einstein}
+	\includegraphics[width=0.9\linewidth]{../ressources/Einstein}
 	\caption{}
 	\end{centering}
 \end{figure}
 \cite{simu_guerre,ilachinski1994,ilachinski1999}
+\end{center}
 
-motivation des agents
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[]{../ressources/einstein_personality_weight}
-	\caption{}
-	\end{centering}
-\end{figure}
-\begin{figure}[H]
-	\begin{centering}
-	\includegraphics[]{../ressources/einstein_personality_factor}
-	\caption{}
-	\end{centering}
-\end{figure}
+Un ensemble d'automates cellulaires mobiles divisés en deux équipes se confrontent, le but étant pour chaque équipe d'atteindre le drapeau de l'autre sans que le sien soit touché. Chaque agent dispose d'une personalité~: un ensemble de ponderations pour chaque percept possible (enemies ou alliés sains ou bléssés, drapeaux, etc) différent pour chaque état. L'agent aura donc plus ou moins envie d'approcher la source d'un percept selon sa personalité et son état physique.
 
-émergence d'un comportement global
+\begin{center}
 \begin{figure}[H]
-	\begin{centering}
+\begin{minipage}[H]{0.3\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{../ressources/einstein_personality_weight}
+	\caption{EINSTein agent personality weights}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.6\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{../ressources/einstein_personality_factor}
+	\caption{EINSTein agent behaviour meta-rules}
+\end{minipage}
+\end{figure}
+\end{center}
+
+En plus de sa personalité, un ensemble de \og{}meta-règles\fg{} influencent ses décisions. Il aura par exemple envie d'avancer vers le drapeau enemie, mais ne le fera pas sans qu'il ait atour de lui un certain nombre d'alliés.
+
+\begin{figure}[H]
+	\begin{center}
 	\includegraphics[width=0.8\linewidth]{../ressources/einstein_global_behavior}
 	\caption{}
-	\end{centering}
+	\end{center}
 \end{figure}
-formation en pointe
-encerclement
-assault frontal
-prise en tenaille
-guérilla
+
+Avec cet architecture simple et un peu d'apprentissage automatique par algorithmes génétiques, nous arrivons à des tactiques intéressantes tels formations en pointe, encerclement, prises en ténaille, attaques guérilla,~\dots
 
 \subsection{Iruba}
 An Agent-Based Model of the Guerrilla War Process
