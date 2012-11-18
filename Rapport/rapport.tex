@@ -518,7 +518,7 @@ sabotage & fortifications\\
 %http://www2.dcs.hull.ac.uk/NEAT/dnd/AI/AndyIlachinski_BriefingSlides.pdf
 
 \subsubsection{Origines}
-\textbf{EINSTein} (\underline{E}nhanced \underline{I}SAAC \underline{N}eural \underline{S}imulation \underline{T}oolkit), conçu sous Andy Ilachinksi en 1999, se présente comme "laboratoire" de vie artificielle, fut implémenté dans le but de faciliter l'exploration de l'auto-orgnisation et l'emmergence dans le combat terrestre. 
+\textbf{EINSTein} (\underline{E}nhanced \underline{I}SAAC \underline{N}eural \underline{S}imulation \underline{T}oolkit), conçu sous Andy Ilachinksi en 1999, se présente comme \og{}laboratoire\fg{} de vie artificielle, fut implémenté dans le but de faciliter l'exploration de l'auto-orgnisation et l'emmergence dans le combat terrestre. 
 
 \begin{center}
 \begin{figure}[H]
@@ -550,7 +550,7 @@ Il se base sur \textbf{ISAAC}(\underline{I}rreducible \underline{S}emi-\underlin
 \begin{figure}[H]
 	\begin{centering}
 	\includegraphics[width=0.9\linewidth]{../ressources/Einstein}
-	\caption{}
+	\caption{Interface développé pour EINSTein}
 	\end{centering}
 \end{figure}
 \cite{simu_guerre,ilachinski1994,ilachinski1999}
@@ -560,17 +560,16 @@ Un ensemble d'automates cellulaires mobiles divisés en deux équipes se confron
 
 \begin{center}
 \begin{figure}[H]
-\begin{minipage}[H]{0.3\linewidth}
+\begin{minipage}[H]{0.35\linewidth}
 	\centering
 	\includegraphics[width=\textwidth]{../ressources/einstein_personality_weight}
-	\caption{EINSTein agent personality weights}
 \end{minipage}
 \hfill
-\begin{minipage}[H]{0.6\linewidth}
+\begin{minipage}[H]{0.55\linewidth}
 	\centering
 	\includegraphics[width=\textwidth]{../ressources/einstein_personality_factor}
-	\caption{EINSTein agent behaviour meta-rules}
 \end{minipage}
+\caption{Agent EINSTein~: ponderations de comportements et meta-règles}
 \end{figure}
 \end{center}
 
@@ -579,7 +578,7 @@ En plus de sa personalité, un ensemble de \og{}meta-règles\fg{} influencent se
 \begin{figure}[H]
 	\begin{center}
 	\includegraphics[width=0.8\linewidth]{../ressources/einstein_global_behavior}
-	\caption{}
+	\caption{Tactiques emmergeants retrouvés dans ISAAC et EINSTein}
 	\end{center}
 \end{figure}
 
@@ -645,7 +644,7 @@ all-out regime counter attack
 \end{figure}
 \end{center}
 
-\subsection{RPDAgent}
+\subsection{RPDAgent (Recogition-Primed Decision Agent)}
 % http://en.wikipedia.org/wiki/Recognition_primed_decision
 \subsubsection{Recognition-primed Decision model}
 Developpé par Gary Klein à partir de 1985, le modèle RPD (\underline{R}ecognition-\underline{P}rimed \underline{D}ecision) est un modèle théorique qui vise à décrire la manière dans lequel les êtres humains font des décisions. RPD s'inscrit dans le framework NDM (\underline{N}aturalistic \underline{D}ecision \underline{M}aking), qui s'oppose à l'agent rationnel comme modèle du décideur humain.
@@ -668,23 +667,34 @@ Un agent RPD base ses décisions sur d'une part une reconaissance de motifs et d
 \end{figure}
 
 \subsubsection{Travail de John Soklowski}
-
-
-\begin{wrapfigure}{r}{0.3\textwidth}
-  \begin{center}
-
-  \end{center}
-\end{wrapfigure}
-
-
-2003
+L'RPDAgent de Soklowski fut développé en 2003 dans le but de modéliser la prise de décision à grande échelle d'un générale humain. Notons que la problématique n'est pas de trouver une solution optimale, mais plutôt de passer un test de Turing, l'application visé étant celui de fournir de simuler un adversaire réaliste lors d'un entrainement et non pas de créer une machine capable de mener des vraies opérations militaires.
 \begin{figure}[H]
-	\begin{centering}
-	\includegraphics[scale=0.9]{../ressources/RPDagent_uml}
-	\caption{}
-	\end{centering}
+\centering
+\begin{minipage}[H]{0.4\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{../ressources/RPDagent_uml}
+	\caption{Diagramme UML de l'agent composite RPDAgent}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.55\linewidth}
+En pratique l'agent RPD est un agent composite formés de plusieurs sous-agents. Il reçoit soit des appels à la decision soit des appels de révision d'actions à base de nouvelles informations, et réagit ainsi~:
+\begin{algorithmic}[1]
+\STATE \emph{RecognitionAgent}: analyse situation
+\STATE \emph{SymbolicConstructorAgent}: create internal representation
+\FORALL {decisions}
+\STATE new \emph{DecisionAgent}: consider this decision
+\FORALL {goals}
+\STATE new \emph{ReactiveAgent}: consider this goal wrt. this decision
+\ENDFOR
+\ENDFOR
+\end{algorithmic}
+Chaque \emph{ReactiveAgent} rend une évaluation à son \emph{DecisionAgent}: s'ils sont tous d'accord, le \emph{ReactiveAgent} rend une affirmation à l'\emph{RPDAgent}, et c'est cette action qui sera choisit. À noter qu'on n'attends pas les autres \emph{DecisionAgent}~: c'est la première décision raisonable qui est choisi.
+\end{minipage}
 \end{figure}
 \cite{sokolowski2003}
+Si jamais certains \emph{ReactiveAgent} ne sont pas satisfaits par la décision, leur \emph{DecisionAgent} leur demandera de trouver un compromis entre eux, donc de modifier la décision, et si aucun compromis ne pourra être trouvé par aucun des \emph{DecisionAgent} alors une décision par défaut sera choisi.
+
+Un protocol expérimentale montre que la RPDAgent, préparé avec une certain base de conaissances historiques, fait des décisions semblables à ceux d'un groupe de commandants humaines mises devant les mêmes problèmes. 
 
 
 \section{Conclusion}
